@@ -21,10 +21,10 @@ sudo docker info
 sudo docker container run -itd --rm --name vul-app-1 -p 8080:8080 us.gcr.io/panw-gcp-team-testing/qwiklab/pcc-log4shell/l4s-demo-app:1.0
 
 # Wait for 5 seconds
-sleep 5
+sleep 20
 
 # Update the domain name of the attack server
-sudo docker exec -it vul-app-1 /bin/sh -c 'echo "10.2.1.100        att-svr" >> /etc/hosts'
+sudo docker exec -it vul-app-1 /bin/sh -c 'echo "10.2.1.100 att-svr" >> /etc/hosts'
 
 # docker run \
 #   --name mysql \
