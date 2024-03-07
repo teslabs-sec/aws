@@ -67,5 +67,3 @@ aws ec2-instance-connect ssh --instance-id <instance-id>
 ### On the EC2 console
 
 You could also connect to the servers directly on the EC2 console by selecting the instance that you want to connect to, and clicking on the __Connect__ button provided above the instance list. Ensure that you use the username as _ec2-user_ for logging in.
-
-# Fin

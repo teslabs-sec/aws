@@ -27,7 +27,8 @@ function install_terraform() {
 
 function deploy_vmseries_lab() {
     # Assuming that this setup script is being run from the cloned github repo, changing the current working directory to one from where Terraform will deploy the lab resources.
-    cd "${HOME}/aws-vmseries-gwlb-poc/terraform/vmseries"
+    SCRIPT_DIR=$(dirname -- "$(readlink -f -- "$0")")
+    cd "${SCRIPT_DIR}/terraform/vmseries"
 
     # Initialize terraform
     echo "Initializing directory for lab resource deployment"
