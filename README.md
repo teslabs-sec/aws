@@ -21,7 +21,7 @@ In this section, we will launch the lab environment. These are the steps that we
 
 #### Deploying from local workspace
 
-If you are attempting to deploy from your local workspace, you would need to update the below values on the _aws-vmseries-gwlb-poc/terraform/vmseries/student.auto.tfvars_ file.
+If you are attempting to deploy from your local workspace, you would need to update the below values on the _utd-aws-vm-series/terraform/vmseries/student.auto.tfvars_ file.
 
 ```
 access-key      = ""
@@ -48,22 +48,7 @@ Ensure that you have the permissions to delete all the resources that were creat
 Run the below commands to teardown the setup.
 
 ```
-cd ~/aws-vmseries-gwlb-poc/terraform/vmseries
+cd utd-aws-vm-series/terraform/vmseries
 terraform destroy -auto-approve
 ```
 
-## Connecting to the app servers
-
-We will be using the user ‘ec2-user’ as the username to login to these applications.
-
-### On the AWS CloudShell
-
-- Navigate to the AWS CloudShell and run the below command to log in to the EC2 instance on the AWS environment. Make sure to replace the _&lt;instance-id>_ in the command below with the instance ID of the EC2 instance.
-
-```
-aws ec2-instance-connect ssh --instance-id <instance-id>
-```
-
-### On the EC2 console
-
-You could also connect to the servers directly on the EC2 console by selecting the instance that you want to connect to, and clicking on the __Connect__ button provided above the instance list. Ensure that you use the username as _ec2-user_ for logging in.
