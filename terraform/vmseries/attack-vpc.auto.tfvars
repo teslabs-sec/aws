@@ -90,7 +90,7 @@ attack-vpc-subnets = [
 
 attack-vpc-instances = [
   {
-    name           = "att-app-server"
+    name           = "attacker"
     instance_type  = "t2.micro"
     subnet         = "subnet"
     setup-file     = "ec2-startup-scripts/log4j-att-svr.sh"

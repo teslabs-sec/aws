@@ -55,7 +55,7 @@ vulnerable-vpc-security-groups = [
 
 vulnerable-vpc-instances = [
   {
-    name           = "vul-app-server"
+    name           = "victim"
     instance_type  = "t2.micro"
     subnet         = "subnet"
     setup-file     = "ec2-startup-scripts/log4j-vul-svr.sh"

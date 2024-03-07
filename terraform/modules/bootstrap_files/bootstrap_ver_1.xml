@@ -564,41 +564,6 @@
                   <log-setting>IoT Security Default Profile</log-setting>
                   <disabled>yes</disabled>
                 </entry>
-                <entry name="ZT-AV-and-URL-Filtering" uuid="ce38de81-5e0b-4502-84fa-d66da323403f">
-                  <to>
-                    <member>any</member>
-                  </to>
-                  <from>
-                    <member>any</member>
-                  </from>
-                  <source>
-                    <member>any</member>
-                  </source>
-                  <destination>
-                    <member>any</member>
-                  </destination>
-                  <source-user>
-                    <member>any</member>
-                  </source-user>
-                  <category>
-                    <member>any</member>
-                  </category>
-                  <application>
-                    <member>any</member>
-                  </application>
-                  <service>
-                    <member>any</member>
-                  </service>
-                  <source-hip>
-                    <member>any</member>
-                  </source-hip>
-                  <destination-hip>
-                    <member>any</member>
-                  </destination-hip>
-                  <action>allow</action>
-                  <log-setting>IoT Security Default Profile</log-setting>
-                  <disabled>yes</disabled>
-                </entry>
                 <entry name="allow-all" uuid="4b0f7676-be64-4007-a31f-b1d6c1ec3dba">
                   <to>
                     <member>any</member>
@@ -724,67 +689,7 @@
             <spyware/>
           </threats>
           <profiles>
-            <virus>
-              <entry name="UTD-AV">
-                <decoder>
-                  <entry name="ftp">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                  <entry name="http">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                  <entry name="http2">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                  <entry name="imap">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                  <entry name="pop3">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                  <entry name="smb">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                  <entry name="smtp">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                </decoder>
-                <mlav-engine-filebased-enabled>
-                  <entry name="Windows Executables">
-                    <mlav-policy-action>disable</mlav-policy-action>
-                  </entry>
-                  <entry name="PowerShell Script 1">
-                    <mlav-policy-action>disable</mlav-policy-action>
-                  </entry>
-                  <entry name="PowerShell Script 2">
-                    <mlav-policy-action>disable</mlav-policy-action>
-                  </entry>
-                  <entry name="Executable Linked Format">
-                    <mlav-policy-action>disable</mlav-policy-action>
-                  </entry>
-                  <entry name="MSOffice">
-                    <mlav-policy-action>disable</mlav-policy-action>
-                  </entry>
-                  <entry name="Shell">
-                    <mlav-policy-action>disable</mlav-policy-action>
-                  </entry>
-                </mlav-engine-filebased-enabled>
-              </entry>
-            </virus>
+            <virus/>
             <spyware>
               <entry name="Log4j-Outbound-AntiSpyware" loc="shared">
                 <botnet-domains loc="shared">
@@ -959,7 +864,7 @@
           <management>
             <hostname-type-in-syslog>FQDN</hostname-type-in-syslog>
             <initcfg>
-              <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDdUlEdy9TTG9iWnNYQi9GSml6b0JCRjVXb2ZlSmlXYkRmY3UvSzIyTFB2TE5NTFRudXBwVUVqckI4NWJXaXlZNzgrb0FFaEg1TFJmbU42VlV1clducVJtQ1QvMVE2Um96Sno3RkpWOVFQNDhiaUdRQjJQSGVmRmc2U2htNDBEeXczYXdSYVZQV0YzWHVSSEwrVWZjejJZRVVmVy9mWENDUTRwWGdIMXdoM0F6ZnltOFIyczlHVVd2ejY0aEVhZUxPRGNTTUFtcHRxZHEzVzJuRi9QdVg2QXdNZWxEL2ZCZ2dFTy9hNFBmQnNWbnd5V0p1MUJnUENJUUdrSnpISG9JSUk0TjBsWDdxSzM1Q0o4a3lPMHcxdWZsdEdOTFErWlB2dU5lMGI2MGY0N0xNL0xDTzRDWmhxaDFTdEZENE1jUUlJMFd2WFlWanlsREtsU1lDb05obWggY3Mta2V5Cg==</public-key>
+              <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEQTBHbjZtSzVYYTFuVU9JemVPalBzM2h5a2dQNWMrWVZBalNOcTFwZEVaRGZ1VDU4cEpGYUxMUmZUejA3b0JlRjFtb2lhVVVScHJUNytEdGkzak52ZTBSTTY4TVB5MTJiVlVKdTlTUW5xVVljSGg2UzFVLzgxellDcmxMaGZ4VHozR3IyTmRyNkR4K3Y5dHdFc0s5Z2FxbkJwQ3NHelZpUW1pa28ycE0vY3l3anhVNHRJWmp2WnBiRHlDTWNnTElubkxVaVpXQjlDTzJlVWE3RDZQTDBhZXNsNFZLQlNvODdZeEg5Y1VCMkZmMmJnYzlhZzVmYThJSFVkU3hQY1FUL0dHcnZqR3ZCZXdJaG8yRWhwRDhtdmJMYURJbDBuRDVUQ1lIOWRXK3NDMlNteHVLSFI3dUhlWW5BMTFTTmNOakVLc0VmYytrcVc2TVQ2dTNGand3N3AgY3Mta2V5Cg==</public-key>
               <type>
                 <dhcp-client>
                   <send-hostname>yes</send-hostname>
@@ -979,6 +884,13 @@
     </entry>
   </devices>
   <shared>
+    <content-preview>
+      <application/>
+      <application-type>
+        <category/>
+        <technology/>
+      </application-type>
+    </content-preview>
     <application/>
     <application-group/>
     <service/>
@@ -1045,7 +957,7 @@
             <superuser>yes</superuser>
           </role-based>
         </permissions>
-        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDdUlEdy9TTG9iWnNYQi9GSml6b0JCRjVXb2ZlSmlXYkRmY3UvSzIyTFB2TE5NTFRudXBwVUVqckI4NWJXaXlZNzgrb0FFaEg1TFJmbU42VlV1clducVJtQ1QvMVE2Um96Sno3RkpWOVFQNDhiaUdRQjJQSGVmRmc2U2htNDBEeXczYXdSYVZQV0YzWHVSSEwrVWZjejJZRVVmVy9mWENDUTRwWGdIMXdoM0F6ZnltOFIyczlHVVd2ejY0aEVhZUxPRGNTTUFtcHRxZHEzVzJuRi9QdVg2QXdNZWxEL2ZCZ2dFTy9hNFBmQnNWbnd5V0p1MUJnUENJUUdrSnpISG9JSUk0TjBsWDdxSzM1Q0o4a3lPMHcxdWZsdEdOTFErWlB2dU5lMGI2MGY0N0xNL0xDTzRDWmhxaDFTdEZENE1jUUlJMFd2WFlWanlsREtsU1lDb05obWggY3Mta2V5Cg==</public-key>
+        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEQTBHbjZtSzVYYTFuVU9JemVPalBzM2h5a2dQNWMrWVZBalNOcTFwZEVaRGZ1VDU4cEpGYUxMUmZUejA3b0JlRjFtb2lhVVVScHJUNytEdGkzak52ZTBSTTY4TVB5MTJiVlVKdTlTUW5xVVljSGg2UzFVLzgxellDcmxMaGZ4VHozR3IyTmRyNkR4K3Y5dHdFc0s5Z2FxbkJwQ3NHelZpUW1pa28ycE0vY3l3anhVNHRJWmp2WnBiRHlDTWNnTElubkxVaVpXQjlDTzJlVWE3RDZQTDBhZXNsNFZLQlNvODdZeEg5Y1VCMkZmMmJnYzlhZzVmYThJSFVkU3hQY1FUL0dHcnZqR3ZCZXdJaG8yRWhwRDhtdmJMYURJbDBuRDVUQ1lIOWRXK3NDMlNteHVLSFI3dUhlWW5BMTFTTmNOakVLc0VmYytrcVc2TVQ2dTNGand3N3AgY3Mta2V5Cg==</public-key>
       </entry>
     </users>
     <password-complexity>
