@@ -26,9 +26,6 @@ sleep 20
 # Update the domain name of the attack server
 sudo docker exec vul-app-1 /bin/sh -c 'echo "10.2.1.100 att-svr" >> /etc/hosts'
 
-# docker run \
-#   --name mysql \
-#   -e MYSQL_ROOT_PASSWORD=HelloWorld123 \
-#   -p 3306:3306 \
-#   -d \
-#   mysql:5.7
+# Run a docker container that's got js.html & phishing.html
+docker run -d -p 80:80 --name url-filtering-demo us-central1-docker.pkg.dev/panw-utd-public-cloud/utd-public-images/utd-aws/vm-series:url-filtering
+
