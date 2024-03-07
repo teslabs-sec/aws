@@ -529,41 +529,6 @@
                   <log-setting>IoT Security Default Profile</log-setting>
                   <disabled>yes</disabled>
                 </entry>
-                <entry name="ZT-Segmentation-FE-to-Redis" uuid="aa4be2b8-099e-48d8-b630-9c54c476ea8e">
-                  <to>
-                    <member>any</member>
-                  </to>
-                  <from>
-                    <member>any</member>
-                  </from>
-                  <source>
-                    <member>any</member>
-                  </source>
-                  <destination>
-                    <member>any</member>
-                  </destination>
-                  <source-user>
-                    <member>any</member>
-                  </source-user>
-                  <category>
-                    <member>any</member>
-                  </category>
-                  <application>
-                    <member>any</member>
-                  </application>
-                  <service>
-                    <member>any</member>
-                  </service>
-                  <source-hip>
-                    <member>any</member>
-                  </source-hip>
-                  <destination-hip>
-                    <member>any</member>
-                  </destination-hip>
-                  <action>allow</action>
-                  <log-setting>IoT Security Default Profile</log-setting>
-                  <disabled>yes</disabled>
-                </entry>
                 <entry name="ZT-AV-and-URL-Filtering" uuid="ce38de81-5e0b-4502-84fa-d66da323403f">
                   <to>
                     <member>any</member>
