@@ -47,3 +47,5 @@ variable "access-key"       { default = "" }
 variable "secret-key"       { default = "" }
 variable "region"           { default = "" }
 variable "ssh-key-name" { default = {} }
+
+variable "ngfw_bootstrap_bucket" { default = {} }

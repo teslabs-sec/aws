@@ -77,6 +77,7 @@ cat << EOH > /tmp/launch_windows_executable.sh
 echo -e "Inline ML - Windows Executables Test File Detection...\n"
 curl -s http://wildfire.paloaltonetworks.com/publicapi/test/pe > /dev/null &
 curl -s http://wildfire.paloaltonetworks.com/publicapi/test/pe > /dev/null &
+curl -s http://wildfire.paloaltonetworks.com/publicapi/test/elf  > /dev/null &
 EOH
 
 cat << EOH > /tmp/launch_js_phishing.sh
