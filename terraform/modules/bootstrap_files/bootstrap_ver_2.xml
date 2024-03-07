@@ -878,162 +878,26 @@
             </spyware>
             <vulnerability/>
             <url-filtering>
-              <entry name="Outbound-URL">
-                <credential-enforcement>
-                  <mode>
-                    <disabled/>
+              <entry name="Outbound-URL" loc="shared">
+                <credential-enforcement loc="shared">
+                  <mode loc="shared">
+                    <disabled loc="shared"/>
                   </mode>
-                  <log-severity>medium</log-severity>
-                  <block>
-                    <member>abortion</member>
-                    <member>abused-drugs</member>
-                    <member>adult</member>
-                    <member>alcohol-and-tobacco</member>
-                    <member>auctions</member>
-                    <member>business-and-economy</member>
-                    <member>command-and-control</member>
-                    <member>computer-and-internet-info</member>
-                    <member>content-delivery-networks</member>
-                    <member>copyright-infringement</member>
-                    <member>cryptocurrency</member>
-                    <member>dating</member>
-                    <member>dynamic-dns</member>
-                    <member>educational-institutions</member>
-                    <member>entertainment-and-arts</member>
-                    <member>extremism</member>
-                    <member>financial-services</member>
-                    <member>gambling</member>
-                    <member>games</member>
-                    <member>government</member>
-                    <member>grayware</member>
-                    <member>hacking</member>
-                    <member>health-and-medicine</member>
-                    <member>high-risk</member>
-                    <member>home-and-garden</member>
-                    <member>hunting-and-fishing</member>
-                    <member>insufficient-content</member>
-                    <member>internet-communications-and-telephony</member>
-                    <member>internet-portals</member>
-                    <member>job-search</member>
-                    <member>legal</member>
-                    <member>low-risk</member>
-                    <member>malware</member>
-                    <member>medium-risk</member>
-                    <member>military</member>
-                    <member>motor-vehicles</member>
-                    <member>music</member>
-                    <member>newly-registered-domain</member>
-                    <member>news</member>
-                    <member>not-resolved</member>
-                    <member>nudity</member>
-                    <member>online-storage-and-backup</member>
-                    <member>parked</member>
-                    <member>peer-to-peer</member>
-                    <member>personal-sites-and-blogs</member>
-                    <member>philosophy-and-political-advocacy</member>
-                    <member>phishing</member>
-                    <member>private-ip-addresses</member>
-                    <member>proxy-avoidance-and-anonymizers</member>
-                    <member>questionable</member>
-                    <member>real-estate</member>
-                    <member>real-time-detection</member>
-                    <member>recreation-and-hobbies</member>
-                    <member>reference-and-research</member>
-                    <member>religion</member>
-                    <member>search-engines</member>
-                    <member>sex-education</member>
-                    <member>shareware-and-freeware</member>
-                    <member>shopping</member>
-                    <member>social-networking</member>
-                    <member>society</member>
-                    <member>sports</member>
-                    <member>stock-advice-and-tools</member>
-                    <member>streaming-media</member>
-                    <member>swimsuits-and-intimate-apparel</member>
-                    <member>training-and-tools</member>
-                    <member>translation</member>
-                    <member>travel</member>
-                    <member>unknown</member>
-                    <member>weapons</member>
-                    <member>web-advertisements</member>
-                    <member>web-based-email</member>
-                    <member>web-hosting</member>
+                  <log-severity loc="shared">medium</log-severity>
+                  <block loc="shared">
+                    <member loc="shared">grayware</member>
+                    <member loc="shared">hacking</member>
+                    <member loc="shared">malware</member>
+                    <member loc="shared">phishing</member>
+                    <member loc="shared">private-ip-addresses</member>
                   </block>
                 </credential-enforcement>
-                <block>
-                  <member>abortion</member>
-                  <member>abused-drugs</member>
-                  <member>adult</member>
-                  <member>alcohol-and-tobacco</member>
-                  <member>auctions</member>
-                  <member>business-and-economy</member>
-                  <member>command-and-control</member>
-                  <member>computer-and-internet-info</member>
-                  <member>content-delivery-networks</member>
-                  <member>copyright-infringement</member>
-                  <member>cryptocurrency</member>
-                  <member>dating</member>
-                  <member>dynamic-dns</member>
-                  <member>educational-institutions</member>
-                  <member>entertainment-and-arts</member>
-                  <member>extremism</member>
-                  <member>financial-services</member>
-                  <member>gambling</member>
-                  <member>games</member>
-                  <member>government</member>
-                  <member>grayware</member>
-                  <member>hacking</member>
-                  <member>health-and-medicine</member>
-                  <member>high-risk</member>
-                  <member>home-and-garden</member>
-                  <member>hunting-and-fishing</member>
-                  <member>insufficient-content</member>
-                  <member>internet-communications-and-telephony</member>
-                  <member>internet-portals</member>
-                  <member>job-search</member>
-                  <member>legal</member>
-                  <member>low-risk</member>
-                  <member>malware</member>
-                  <member>medium-risk</member>
-                  <member>military</member>
-                  <member>motor-vehicles</member>
-                  <member>music</member>
-                  <member>newly-registered-domain</member>
-                  <member>news</member>
-                  <member>not-resolved</member>
-                  <member>nudity</member>
-                  <member>online-storage-and-backup</member>
-                  <member>parked</member>
-                  <member>peer-to-peer</member>
-                  <member>personal-sites-and-blogs</member>
-                  <member>philosophy-and-political-advocacy</member>
-                  <member>phishing</member>
-                  <member>private-ip-addresses</member>
-                  <member>proxy-avoidance-and-anonymizers</member>
-                  <member>questionable</member>
-                  <member>real-estate</member>
-                  <member>real-time-detection</member>
-                  <member>recreation-and-hobbies</member>
-                  <member>reference-and-research</member>
-                  <member>religion</member>
-                  <member>search-engines</member>
-                  <member>sex-education</member>
-                  <member>shareware-and-freeware</member>
-                  <member>shopping</member>
-                  <member>social-networking</member>
-                  <member>society</member>
-                  <member>sports</member>
-                  <member>stock-advice-and-tools</member>
-                  <member>streaming-media</member>
-                  <member>swimsuits-and-intimate-apparel</member>
-                  <member>training-and-tools</member>
-                  <member>translation</member>
-                  <member>travel</member>
-                  <member>unknown</member>
-                  <member>weapons</member>
-                  <member>web-advertisements</member>
-                  <member>web-based-email</member>
-                  <member>web-hosting</member>
+                <block loc="shared">
+                  <member loc="shared">grayware</member>
+                  <member loc="shared">hacking</member>
+                  <member loc="shared">malware</member>
+                  <member loc="shared">phishing</member>
+                  <member loc="shared">private-ip-addresses</member>
                 </block>
               </entry>
             </url-filtering>
@@ -1095,7 +959,7 @@
           <management>
             <hostname-type-in-syslog>FQDN</hostname-type-in-syslog>
             <initcfg>
-              <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEY0ZxSnBSRFc5ZHB5eFFKc3dyZEo5UWRVR0hNWDNtS1BMS0M0NnhBa01DazhvMUpuelZCVFRYZDBzaDVKUVZvcTJSa0M5c25oWXVpUFcrYTg3Y3YvWHVzZExxT2VVOERVdU11ZzJsamNxUWZITUpYL3MyeWlFN0JRVHlxYXpmbStNNDVLM2NITU5ER2dLSm9zY09iUjAxZVVWM0NFcTRGTm5sWDRrelJsZUg1UHlHRHJoMGx3aDA1NDZlM21kNW1FL1FuUHVtdGlOZjNpZWhURU9PK20vdHBDNGdBQXNSUVZkYlIzNjROZVhrUVJsWkRlcFRTcm5VdWpEb001V09Nb0c3RXZNZFczeFA0NVNubk1IVDJJdm00TENxcHlLdTJTTU43ZS9UM2ZKcmZ2N2VnY1NWdkNPYlpHT0IzWU5uUDdLTDM0SW5xeXUrTlpIWlJHSzE3MEIgY3Mta2V5Cg==</public-key>
+              <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDdUlEdy9TTG9iWnNYQi9GSml6b0JCRjVXb2ZlSmlXYkRmY3UvSzIyTFB2TE5NTFRudXBwVUVqckI4NWJXaXlZNzgrb0FFaEg1TFJmbU42VlV1clducVJtQ1QvMVE2Um96Sno3RkpWOVFQNDhiaUdRQjJQSGVmRmc2U2htNDBEeXczYXdSYVZQV0YzWHVSSEwrVWZjejJZRVVmVy9mWENDUTRwWGdIMXdoM0F6ZnltOFIyczlHVVd2ejY0aEVhZUxPRGNTTUFtcHRxZHEzVzJuRi9QdVg2QXdNZWxEL2ZCZ2dFTy9hNFBmQnNWbnd5V0p1MUJnUENJUUdrSnpISG9JSUk0TjBsWDdxSzM1Q0o4a3lPMHcxdWZsdEdOTFErWlB2dU5lMGI2MGY0N0xNL0xDTzRDWmhxaDFTdEZENE1jUUlJMFd2WFlWanlsREtsU1lDb05obWggY3Mta2V5Cg==</public-key>
               <type>
                 <dhcp-client>
                   <send-hostname>yes</send-hostname>
@@ -1181,7 +1045,7 @@
             <superuser>yes</superuser>
           </role-based>
         </permissions>
-        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEY0ZxSnBSRFc5ZHB5eFFKc3dyZEo5UWRVR0hNWDNtS1BMS0M0NnhBa01DazhvMUpuelZCVFRYZDBzaDVKUVZvcTJSa0M5c25oWXVpUFcrYTg3Y3YvWHVzZExxT2VVOERVdU11ZzJsamNxUWZITUpYL3MyeWlFN0JRVHlxYXpmbStNNDVLM2NITU5ER2dLSm9zY09iUjAxZVVWM0NFcTRGTm5sWDRrelJsZUg1UHlHRHJoMGx3aDA1NDZlM21kNW1FL1FuUHVtdGlOZjNpZWhURU9PK20vdHBDNGdBQXNSUVZkYlIzNjROZVhrUVJsWkRlcFRTcm5VdWpEb001V09Nb0c3RXZNZFczeFA0NVNubk1IVDJJdm00TENxcHlLdTJTTU43ZS9UM2ZKcmZ2N2VnY1NWdkNPYlpHT0IzWU5uUDdLTDM0SW5xeXUrTlpIWlJHSzE3MEIgY3Mta2V5Cg==</public-key>
+        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDdUlEdy9TTG9iWnNYQi9GSml6b0JCRjVXb2ZlSmlXYkRmY3UvSzIyTFB2TE5NTFRudXBwVUVqckI4NWJXaXlZNzgrb0FFaEg1TFJmbU42VlV1clducVJtQ1QvMVE2Um96Sno3RkpWOVFQNDhiaUdRQjJQSGVmRmc2U2htNDBEeXczYXdSYVZQV0YzWHVSSEwrVWZjejJZRVVmVy9mWENDUTRwWGdIMXdoM0F6ZnltOFIyczlHVVd2ejY0aEVhZUxPRGNTTUFtcHRxZHEzVzJuRi9QdVg2QXdNZWxEL2ZCZ2dFTy9hNFBmQnNWbnd5V0p1MUJnUENJUUdrSnpISG9JSUk0TjBsWDdxSzM1Q0o4a3lPMHcxdWZsdEdOTFErWlB2dU5lMGI2MGY0N0xNL0xDTzRDWmhxaDFTdEZENE1jUUlJMFd2WFlWanlsREtsU1lDb05obWggY3Mta2V5Cg==</public-key>
       </entry>
     </users>
     <password-complexity>
