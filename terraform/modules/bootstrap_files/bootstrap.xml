@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<config version="10.2.0" urldb="paloaltonetworks">
+<config version="10.2.0" urldb="paloaltonetworks" detail-version="10.2.1">
   <devices>
     <entry name="localhost.localdomain">
       <network>
@@ -406,73 +406,231 @@
           <rulebase>
             <security>
               <rules>
-                <entry name="allow-all" uuid="4b0f7676-be64-4007-a31f-b1d6c1ec3dba">
-                  <to loc="shared">
-                    <member loc="shared">any</member>
+                <entry name="ZT-log4j_BLOCK_INBOUND" uuid="7c264022-613c-4edb-89e7-ce5c61eab5f3">
+                  <profile-setting>
+                    <profiles>
+                      <vulnerability>
+                        <member>strict</member>
+                      </vulnerability>
+                    </profiles>
+                  </profile-setting>
+                  <to>
+                    <member>any</member>
                   </to>
-                  <from loc="shared">
-                    <member loc="shared">any</member>
+                  <from>
+                    <member>any</member>
                   </from>
-                  <source loc="shared">
-                    <member loc="shared">any</member>
+                  <source>
+                    <member>any</member>
                   </source>
-                  <destination loc="shared">
-                    <member loc="shared">any</member>
+                  <destination>
+                    <member>VulnerableAPP</member>
                   </destination>
-                  <source-user loc="shared">
-                    <member loc="shared">any</member>
+                  <source-user>
+                    <member>any</member>
                   </source-user>
-                  <category loc="shared">
-                    <member loc="shared">any</member>
+                  <category>
+                    <member>any</member>
                   </category>
-                  <application loc="shared">
-                    <member loc="shared">any</member>
+                  <application>
+                    <member>any</member>
                   </application>
-                  <service loc="shared">
-                    <member loc="shared">any</member>
+                  <service>
+                    <member>any</member>
                   </service>
-                  <source-hip loc="shared">
-                    <member loc="shared">any</member>
+                  <source-hip>
+                    <member>any</member>
                   </source-hip>
-                  <destination-hip loc="shared">
-                    <member loc="shared">any</member>
+                  <destination-hip>
+                    <member>any</member>
                   </destination-hip>
-                  <action loc="shared">allow</action>
-                  <log-setting loc="shared">IoT Security Default Profile</log-setting>
+                  <action>allow</action>
+                  <log-setting>IoT Security Default Profile</log-setting>
+                  <disabled>yes</disabled>
+                </entry>
+                <entry name="ZT-log4j_BLOCK_OUTBOUND" uuid="03a349dd-4da6-45bb-a2a8-c8a822024ddb">
+                  <profile-setting>
+                    <profiles>
+                      <url-filtering>
+                        <member>Outbound-URL</member>
+                      </url-filtering>
+                      <spyware>
+                        <member>Log4j-Outbound-AntiSpyware</member>
+                      </spyware>
+                    </profiles>
+                  </profile-setting>
+                  <to>
+                    <member>any</member>
+                  </to>
+                  <from>
+                    <member>any</member>
+                  </from>
+                  <source>
+                    <member>VulnerableAPP</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>any</member>
+                  </application>
+                  <service>
+                    <member>any</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>allow</action>
+                  <log-setting>IoT Security Default Profile</log-setting>
+                  <disabled>yes</disabled>
+                </entry>
+                <entry name="ZT-LLDP-RMI_logdj_BLOCK" uuid="b76ddbdc-353c-4e39-bd34-605aef539d42">
+                  <to>
+                    <member>any</member>
+                  </to>
+                  <from>
+                    <member>any</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>ldap</member>
+                    <member>rmi-iiop</member>
+                  </application>
+                  <service>
+                    <member>any</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>deny</action>
+                  <log-setting>IoT Security Default Profile</log-setting>
+                  <disabled>yes</disabled>
+                </entry>
+                <entry name="ZT-Segmentation-FE-to-Redis" uuid="aa4be2b8-099e-48d8-b630-9c54c476ea8e">
+                  <to>
+                    <member>any</member>
+                  </to>
+                  <from>
+                    <member>any</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>any</member>
+                  </application>
+                  <service>
+                    <member>any</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>allow</action>
+                  <log-setting>IoT Security Default Profile</log-setting>
+                  <disabled>yes</disabled>
+                </entry>
+                <entry name="allow-all" uuid="4b0f7676-be64-4007-a31f-b1d6c1ec3dba">
+                  <to>
+                    <member>any</member>
+                  </to>
+                  <from>
+                    <member>any</member>
+                  </from>
+                  <source>
+                    <member>any</member>
+                  </source>
+                  <destination>
+                    <member>any</member>
+                  </destination>
+                  <source-user>
+                    <member>any</member>
+                  </source-user>
+                  <category>
+                    <member>any</member>
+                  </category>
+                  <application>
+                    <member>any</member>
+                  </application>
+                  <service>
+                    <member>any</member>
+                  </service>
+                  <source-hip>
+                    <member>any</member>
+                  </source-hip>
+                  <destination-hip>
+                    <member>any</member>
+                  </destination-hip>
+                  <action>allow</action>
+                  <log-setting>IoT Security Default Profile</log-setting>
                 </entry>
                 <entry name="explicit-deny" uuid="fbb7dcca-418b-4c07-908f-874d38b08f1e">
-                  <to loc="shared">
-                    <member loc="shared">any</member>
+                  <to>
+                    <member>any</member>
                   </to>
-                  <from loc="shared">
-                    <member loc="shared">any</member>
+                  <from>
+                    <member>any</member>
                   </from>
-                  <source loc="shared">
-                    <member loc="shared">any</member>
+                  <source>
+                    <member>any</member>
                   </source>
-                  <destination loc="shared">
-                    <member loc="shared">any</member>
+                  <destination>
+                    <member>any</member>
                   </destination>
-                  <source-user loc="shared">
-                    <member loc="shared">any</member>
+                  <source-user>
+                    <member>any</member>
                   </source-user>
-                  <category loc="shared">
-                    <member loc="shared">any</member>
+                  <category>
+                    <member>any</member>
                   </category>
-                  <application loc="shared">
-                    <member loc="shared">any</member>
+                  <application>
+                    <member>any</member>
                   </application>
-                  <service loc="shared">
-                    <member loc="shared">any</member>
+                  <service>
+                    <member>any</member>
                   </service>
-                  <source-hip loc="shared">
-                    <member loc="shared">any</member>
+                  <source-hip>
+                    <member>any</member>
                   </source-hip>
-                  <destination-hip loc="shared">
-                    <member loc="shared">any</member>
+                  <destination-hip>
+                    <member>any</member>
                   </destination-hip>
-                  <action loc="shared">deny</action>
-                  <log-setting loc="shared">IoT Security Default Profile</log-setting>
+                  <action>deny</action>
+                  <log-setting>IoT Security Default Profile</log-setting>
                 </entry>
               </rules>
             </security>
@@ -665,32 +823,61 @@
           <type>
             <dhcp-client>
               <send-hostname>yes</send-hostname>
-              <send-client-id>no</send-client-id>
+              <send-client-id>yes</send-client-id>
               <accept-dhcp-hostname>no</accept-dhcp-hostname>
-              <accept-dhcp-domain>no</accept-dhcp-domain>
+              <accept-dhcp-domain>yes</accept-dhcp-domain>
             </dhcp-client>
           </type>
           <update-server>updates.paloaltonetworks.com</update-server>
           <update-schedule>
             <threats>
               <recurring>
-                <weekly>
-                  <day-of-week>wednesday</day-of-week>
-                  <at>01:02</at>
-                  <action>download-only</action>
-                </weekly>
+                <every-30-mins>
+                  <action>download-and-install</action>
+                </every-30-mins>
+                <threshold>1</threshold>
               </recurring>
             </threats>
+            <anti-virus>
+              <recurring>
+                <hourly>
+                  <action>download-and-install</action>
+                </hourly>
+                <threshold>1</threshold>
+              </recurring>
+            </anti-virus>
+            <global-protect-clientless-vpn>
+              <recurring>
+                <hourly>
+                  <action>download-and-install</action>
+                </hourly>
+              </recurring>
+            </global-protect-clientless-vpn>
+            <wildfire>
+              <recurring>
+                <every-15-mins>
+                  <at>0</at>
+                  <action>download-and-install</action>
+                </every-15-mins>
+              </recurring>
+            </wildfire>
           </update-schedule>
           <timezone>US/Pacific</timezone>
           <service>
             <disable-telnet>yes</disable-telnet>
             <disable-http>yes</disable-http>
           </service>
-          <hostname>qwikLABS-vmseries01</hostname>
+          <hostname>vmseries-ngfw</hostname>
           <panorama>
             <local-panorama/>
           </panorama>
+          <dns-setting>
+            <servers>
+              <primary>169.254.169.254</primary>
+              <secondary>4.2.2.2</secondary>
+            </servers>
+          </dns-setting>
+          <login-banner>Welcome to the Palo Alto Networks Ultimate Test Drive workshop</login-banner>
         </system>
         <setting>
           <config>
@@ -698,7 +885,21 @@
           </config>
           <management>
             <hostname-type-in-syslog>FQDN</hostname-type-in-syslog>
-            <initcfg/>
+            <initcfg>
+              <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEQTBHbjZtSzVYYTFuVU9JemVPalBzM2h5a2dQNWMrWVZBalNOcTFwZEVaRGZ1VDU4cEpGYUxMUmZUejA3b0JlRjFtb2lhVVVScHJUNytEdGkzak52ZTBSTTY4TVB5MTJiVlVKdTlTUW5xVVljSGg2UzFVLzgxellDcmxMaGZ4VHozR3IyTmRyNkR4K3Y5dHdFc0s5Z2FxbkJwQ3NHelZpUW1pa28ycE0vY3l3anhVNHRJWmp2WnBiRHlDTWNnTElubkxVaVpXQjlDTzJlVWE3RDZQTDBhZXNsNFZLQlNvODdZeEg5Y1VCMkZmMmJnYzlhZzVmYThJSFVkU3hQY1FUL0dHcnZqR3ZCZXdJaG8yRWhwRDhtdmJMYURJbDBuRDVUQ1lIOWRXK3NDMlNteHVLSFI3dUhlWW5BMTFTTmNOakVLc0VmYytrcVc2TVQ2dTNGand3N3AgY3Mta2V5Cg==</public-key>
+              <type>
+                <dhcp-client>
+                  <send-hostname>yes</send-hostname>
+                  <send-client-id>yes</send-client-id>
+                  <accept-dhcp-hostname>no</accept-dhcp-hostname>
+                  <accept-dhcp-domain>yes</accept-dhcp-domain>
+                </dhcp-client>
+              </type>
+              <hostname>vmseries-ngfw</hostname>
+              <dns-primary>169.254.169.254</dns-primary>
+              <dns-secondary>4.2.2.2</dns-secondary>
+              <op-command-modes>mgmt-interface-swap</op-command-modes>
+            </initcfg>
           </management>
         </setting>
       </deviceconfig>
@@ -706,888 +907,7 @@
   </devices>
   <shared>
     <content-preview>
-      <application>
-        <entry id="10839" minver="8.1.0" name="brightsign-media-player" ori_country="USA" ori_language="English">
-          <category>business-systems</category>
-          <subcategory>ics-protocols</subcategory>
-          <technology>client-server</technology>
-          <description>BrightSign LLC, the global market leader in digital signage media players. BrightSign designs media players and provides free software and cloud networking solutions for the commercial digital signage market. This App-ID covers traffic from the BrightSign digital media player.</description>
-          <appident>yes</appident>
-          <vulnerability-ident>yes</vulnerability-ident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>yes</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <can-disable>yes</can-disable>
-          <new-appid>yes</new-appid>
-          <references>
-            <entry name="BrightSign">
-              <link>https://www.brightsign.biz/</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/443</member>
-              <member>tcp/80</member>
-            </port>
-          </default>
-          <use-applications>
-            <member>web-browsing</member>
-          </use-applications>
-          <risk>1</risk>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10837" minver="8.1.0" name="compx-lockview" ori_country="USA" ori_language="English">
-          <category>business-systems</category>
-          <subcategory>ics-protocols</subcategory>
-          <technology>client-server</technology>
-          <description>The CompX eLock is a device that provides access control with audit trail capabilities and/or temperature monitoring for a variety of applications, such as for drug and supply cabinets, refrigerators and freezers, key control cabinets, tool storage, or evidence lockers. LockView software provides overall management of CompX eLocks. This App-ID covers the traffic between CompX eLocks and LockView servers.</description>
-          <appident>yes</appident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>no</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <new-appid>yes</new-appid>
-          <references>
-            <entry name="CompX eLock">
-              <link>http://compxelock.com/what_is_elock.html</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/4308</member>
-            </port>
-          </default>
-          <risk>1</risk>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10845" minver="8.1.0" name="dahua-p2p" ori_country="USA" ori_language="English">
-          <category>business-systems</category>
-          <subcategory>ics-protocols</subcategory>
-          <technology>peer-to-peer</technology>
-          <description>Dahua Technology provides video surveillance products and services. This App-ID covers the p2p protocol traffic of Dahua camera, DVR, and NVR equipment.</description>
-          <appident>yes</appident>
-          <vulnerability-ident>yes</vulnerability-ident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>yes</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <can-disable>yes</can-disable>
-          <new-appid>yes</new-appid>
-          <tag minver="9.1.0">
-            <member>[Web App]</member>
-          </tag>
-          <references>
-            <entry name="Dahuawiki Page">
-              <link>https://dahuawiki.com/Mobile/Easy4IP_Mobile_P2P_Setup</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/35000,37777</member>
-            </port>
-          </default>
-          <use-applications>
-            <member>web-browsing</member>
-          </use-applications>
-          <risk>1</risk>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10834" minver="8.1.0" name="esii-terminal" ori_country="USA" ori_language="English">
-          <category>business-systems</category>
-          <subcategory>ics-protocols</subcategory>
-          <technology>client-server</technology>
-          <description>ESII produces touchscreen terminals that let you manage your queues, and thus organize your customers/patient flows according to your needs. This App-ID covers the traffic between ESII terminals and client devices.</description>
-          <alg>yes</alg>
-          <appident>yes</appident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>no</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <decode>iot</decode>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <references>
-            <entry name="ESII">
-              <link>https://www.esii.com/en/page/products</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/dynamic</member>
-            </port>
-          </default>
-          <risk>1</risk>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10824" minver="8.1.0" name="galaxy-gateway-service" ori_country="USA" ori_language="English">
-          <category>business-systems</category>
-          <subcategory>management</subcategory>
-          <technology>client-server</technology>
-          <description>Galaxy Control Systems is a global leader in the access control industry. The GCS Client Gateway Service handles messaging between the SG client software and the GCS Communication Service. This App-ID covers event log traffic from the GCS Gateway Service to the System Galaxy Software Application running on a monitoring server.</description>
-          <appident>yes</appident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>no</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <references>
-            <entry name="Galaxy Access Control">
-              <link>https://www.galaxysys.com/</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/4002</member>
-            </port>
-          </default>
-          <risk>1</risk>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10828" minver="8.1.0" name="google-photos-downloading" ori_country="USA" ori_language="English">
-          <category>saas</category>
-          <subcategory>photo-video</subcategory>
-          <technology>client-server</technology>
-          <description>Google Photos is a photograph and video sharing and storage service by Google. This App-ID covers the downloading traffic in google-photos.</description>
-          <appident>yes</appident>
-          <virus-ident>yes</virus-ident>
-          <spyware-ident>yes</spyware-ident>
-          <file-type-ident>yes</file-type-ident>
-          <vulnerability-ident>yes</vulnerability-ident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>yes</able-to-transfer-file>
-          <has-known-vulnerability>yes</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>yes</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <data-ident>yes</data-ident>
-          <cachable>no</cachable>
-          <file-forward>yes</file-forward>
-          <can-disable>yes</can-disable>
-          <is-saas>yes</is-saas>
-          <saas minver="8.1.0">
-            <certifications>
-              <is-hipaa>yes</is-hipaa>
-              <is-soc2>yes</is-soc2>
-            </certifications>
-            <is-data-breaches>no</is-data-breaches>
-            <is-ip-based-restrictions>no</is-ip-based-restrictions>
-            <is-poor-financial-viability>no</is-poor-financial-viability>
-            <is-poor-terms-of-service>no</is-poor-terms-of-service>
-          </saas>
-          <tag minver="9.1.0">
-            <member>[Web App]</member>
-          </tag>
-          <references>
-            <entry name="Google Photos Home page">
-              <link>https://www.google.com/photos/about/</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/80,443</member>
-            </port>
-          </default>
-          <use-applications minver="5.0.0">
-            <member minver="5.0.0">google-photos-base</member>
-          </use-applications>
-          <tunnel-applications minver="3.1.0">
-            <member minver="3.1.0">ctd-dummy</member>
-          </tunnel-applications>
-          <risk>3</risk>
-          <parent-app>google-photos-base</parent-app>
-          <preview>yes</preview>
-        </entry>
-        <entry id="2327" minver="5.0.0" name="google-photos-base" ori_country="USA" ori_language="English">
-          <ottawa-name>google-photos</ottawa-name>
-          <category>saas</category>
-          <subcategory>photo-video</subcategory>
-          <technology>browser-based</technology>
-          <description>Google Photos is a photograph and video sharing and storage service by Google. It was announced in May 2015 and spun out from Google+,  the company's social network. Google Photos replaces what was earlier called Google Picasa.</description>
-          <appident>yes</appident>
-          <virus-ident>yes</virus-ident>
-          <spyware-ident>yes</spyware-ident>
-          <file-type-ident>yes</file-type-ident>
-          <vulnerability-ident>yes</vulnerability-ident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>yes</able-to-transfer-file>
-          <has-known-vulnerability>yes</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>yes</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <data-ident>yes</data-ident>
-          <cachable>no</cachable>
-          <file-forward>yes</file-forward>
-          <can-disable>yes</can-disable>
-          <is-saas>yes</is-saas>
-          <saas minver="8.1.0">
-            <certifications>
-              <is-hipaa>yes</is-hipaa>
-              <is-soc2>yes</is-soc2>
-            </certifications>
-            <is-data-breaches>no</is-data-breaches>
-            <is-ip-based-restrictions>no</is-ip-based-restrictions>
-            <is-poor-financial-viability>no</is-poor-financial-viability>
-            <is-poor-terms-of-service>no</is-poor-terms-of-service>
-          </saas>
-          <tag minver="9.1.0">
-            <member>[Web App]</member>
-          </tag>
-          <references>
-            <entry name="Wikipedia">
-              <link>https://en.wikipedia.org/wiki/Google_Photos</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/80,443</member>
-            </port>
-          </default>
-          <use-applications minver="3.0.0">
-            <member minver="3.0.0">google-base</member>
-          </use-applications>
-          <tunnel-applications minver="8.1.0">
-            <member minver="8.1.0">google-photos-downloading</member>
-            <member minver="8.1.0">google-photos-sharing</member>
-            <member minver="8.1.0">google-photos-uploading</member>
-          </tunnel-applications>
-          <applicable-decoders>
-            <member>http</member>
-          </applicable-decoders>
-          <risk>3</risk>
-          <application-container>google-photos</application-container>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10829" minver="8.1.0" name="google-photos-sharing" ori_country="USA" ori_language="English">
-          <category>saas</category>
-          <subcategory>photo-video</subcategory>
-          <technology>client-server</technology>
-          <description>Google Photos is a photograph and video sharing and storage service by Google. This App-ID covers the sharing traffic in google-photos.</description>
-          <appident>yes</appident>
-          <virus-ident>yes</virus-ident>
-          <spyware-ident>yes</spyware-ident>
-          <file-type-ident>yes</file-type-ident>
-          <vulnerability-ident>yes</vulnerability-ident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>yes</able-to-transfer-file>
-          <has-known-vulnerability>yes</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>yes</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <data-ident>yes</data-ident>
-          <cachable>no</cachable>
-          <file-forward>yes</file-forward>
-          <can-disable>yes</can-disable>
-          <is-saas>yes</is-saas>
-          <saas minver="8.1.0">
-            <certifications>
-              <is-hipaa>yes</is-hipaa>
-              <is-soc2>yes</is-soc2>
-            </certifications>
-            <is-data-breaches>no</is-data-breaches>
-            <is-ip-based-restrictions>no</is-ip-based-restrictions>
-            <is-poor-financial-viability>no</is-poor-financial-viability>
-            <is-poor-terms-of-service>no</is-poor-terms-of-service>
-          </saas>
-          <tag minver="9.1.0">
-            <member>[Web App]</member>
-          </tag>
-          <references>
-            <entry name="Google Photos Home page">
-              <link>https://www.google.com/photos/about/</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/80,443</member>
-            </port>
-          </default>
-          <use-applications minver="5.0.0">
-            <member minver="5.0.0">google-photos-base</member>
-          </use-applications>
-          <tunnel-applications minver="3.1.0">
-            <member minver="3.1.0">ctd-dummy</member>
-          </tunnel-applications>
-          <risk>3</risk>
-          <parent-app>google-photos-base</parent-app>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10827" minver="8.1.0" name="google-photos-uploading" ori_country="USA" ori_language="English">
-          <category>saas</category>
-          <subcategory>photo-video</subcategory>
-          <technology>client-server</technology>
-          <description>Google Photos is a photograph and video sharing and storage service by Google. This App-ID covers the uploading traffic in google-photos.</description>
-          <appident>yes</appident>
-          <virus-ident>yes</virus-ident>
-          <spyware-ident>yes</spyware-ident>
-          <file-type-ident>yes</file-type-ident>
-          <vulnerability-ident>yes</vulnerability-ident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>yes</able-to-transfer-file>
-          <has-known-vulnerability>yes</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>yes</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <data-ident>yes</data-ident>
-          <cachable>no</cachable>
-          <file-forward>yes</file-forward>
-          <can-disable>yes</can-disable>
-          <is-saas>yes</is-saas>
-          <saas minver="8.1.0">
-            <certifications>
-              <is-hipaa>yes</is-hipaa>
-              <is-soc2>yes</is-soc2>
-            </certifications>
-            <is-data-breaches>no</is-data-breaches>
-            <is-ip-based-restrictions>no</is-ip-based-restrictions>
-            <is-poor-financial-viability>no</is-poor-financial-viability>
-            <is-poor-terms-of-service>no</is-poor-terms-of-service>
-          </saas>
-          <tag minver="9.1.0">
-            <member>[Web App]</member>
-          </tag>
-          <references>
-            <entry name="Google Photos Home page">
-              <link>https://www.google.com/photos/about/</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/80,443</member>
-            </port>
-          </default>
-          <use-applications minver="5.0.0">
-            <member minver="5.0.0">google-photos-base</member>
-          </use-applications>
-          <tunnel-applications minver="3.1.0">
-            <member minver="3.1.0">ctd-dummy</member>
-          </tunnel-applications>
-          <risk>3</risk>
-          <parent-app>google-photos-base</parent-app>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10846" minver="8.1.0" name="nintendo-conntest" ori_country="USA" ori_language="English">
-          <category>media</category>
-          <subcategory>gaming</subcategory>
-          <technology>client-server</technology>
-          <description>Nintendo video game consoles communicate to this host to check internet status when connected to a Wi-Fi network. This App-ID covers the traffic for nintendo-conntest application.</description>
-          <appident>yes</appident>
-          <vulnerability-ident>yes</vulnerability-ident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>yes</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <can-disable>yes</can-disable>
-          <new-appid>yes</new-appid>
-          <references>
-            <entry name="Nintendo Switch">
-              <link>https://www.nintendo.com/switch/system/</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/80,443</member>
-            </port>
-          </default>
-          <use-applications>
-            <member>web-browsing</member>
-          </use-applications>
-          <implicit-use-applications>
-            <member>web-browsing</member>
-          </implicit-use-applications>
-          <risk>1</risk>
-          <parent-app>web20_parrent_app</parent-app>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10825" minver="8.1.0" name="packer" ori_country="USA" ori_language="English">
-          <category>business-systems</category>
-          <subcategory>management</subcategory>
-          <technology>client-server</technology>
-          <description>Packer is an open source tool that enables you to create identical machine images for multiple platforms from a single source template. This App-ID covers the traffic for Packer application.</description>
-          <appident>yes</appident>
-          <vulnerability-ident>yes</vulnerability-ident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>yes</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <can-disable>yes</can-disable>
-          <references>
-            <entry name="Packer">
-              <link>https://www.packer.io/</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/80,443</member>
-            </port>
-          </default>
-          <use-applications>
-            <member>ssl</member>
-            <member>web-browsing</member>
-          </use-applications>
-          <implicit-use-applications>
-            <member>ssl</member>
-            <member>web-browsing</member>
-          </implicit-use-applications>
-          <risk>1</risk>
-          <parent-app>github-base</parent-app>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10836" minver="8.1.0" name="paloalto-aurl-idl" ori_country="USA" ori_language="English">
-          <category>business-systems</category>
-          <subcategory>general-business</subcategory>
-          <technology>client-server</technology>
-          <description>Palo Alto Networks Advanced URL Filtering utilizes the Inline Deep Learning service to provide real time analysis of web content to detect and prevent never before seen web based attacks. This App-ID covers the traffic from the firewall to the AURL cloud service.</description>
-          <appident>yes</appident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>no</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <breaks-decryption>yes</breaks-decryption>
-          <can-disable>yes</can-disable>
-          <tag minver="9.1.0">
-            <member>[Palo Alto Networks]</member>
-          </tag>
-          <references>
-            <entry name="Palo Alto Networks AURL  Inline Deep Learning">
-              <link>https://www.paloaltonetworks.com/network-security/advanced-url-filtering</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/443</member>
-            </port>
-          </default>
-          <use-applications>
-            <member>ssl</member>
-          </use-applications>
-          <implicit-use-applications>
-            <member>ssl</member>
-          </implicit-use-applications>
-          <risk>1</risk>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10811" minver="8.1.0" name="paloalto-pa-acs" ori_country="USA" ori_language="English">
-          <category>business-systems</category>
-          <subcategory>general-business</subcategory>
-          <technology>client-server</technology>
-          <description>Prisma Access Auth Cache Service (ACS) is used by Prisma Access Explicit proxy for authentication purposes. Explicit Proxy checks for the presence and validity of auth cookie. If the cookie is not present or is invalid, the user is redirected to ACS. After ACS confirms the authentication of the user, the user is redirected back to the explicit proxy. This App-ID covers the traffic of Prisma Access Auth Cache Service.</description>
-          <appident>yes</appident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>no</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <can-disable>yes</can-disable>
-          <new-appid>yes</new-appid>
-          <tag minver="9.1.0">
-            <member>[Palo Alto Networks]</member>
-          </tag>
-          <default>
-            <port>
-              <member>tcp/443</member>
-            </port>
-          </default>
-          <use-applications>
-            <member>ssl</member>
-          </use-applications>
-          <implicit-use-applications>
-            <member>ssl</member>
-          </implicit-use-applications>
-          <risk>1</risk>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10826" minver="8.1.0" name="paramount-plus" ori_country="USA" ori_language="English">
-          <category>media</category>
-          <subcategory>photo-video</subcategory>
-          <technology>browser-based</technology>
-          <description>Paramount+ is an American subscription video on-demand over-the-top streaming service owned and operated by ViacomCBS Streaming, a division of ViacomCBS. This App-ID covers the traffic for Paramount+ application.</description>
-          <appident>yes</appident>
-          <vulnerability-ident>yes</vulnerability-ident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>yes</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>yes</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>yes</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <can-disable>yes</can-disable>
-          <tag minver="9.1.0">
-            <member>[Entertainment Video]</member>
-            <member>[Web App]</member>
-          </tag>
-          <references>
-            <entry name="Paramount+">
-              <link>https://www.paramountplus.com/</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/80,443</member>
-            </port>
-          </default>
-          <use-applications>
-            <member minver="3.0.0">cbs-video</member>
-            <member minver="3.0.0">google-base</member>
-            <member>http-video</member>
-            <member>ssl</member>
-            <member>web-browsing</member>
-            <member minver="5.0.0">youtube-streaming</member>
-          </use-applications>
-          <risk>2</risk>
-          <parent-app>cbs-video</parent-app>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10833" minver="8.1.0" name="pointsix-manager-protocol" ori_country="USA" ori_language="English">
-          <category>business-systems</category>
-          <subcategory>ics-protocols</subcategory>
-          <technology>client-server</technology>
-          <description>The pointsix-manager-protocol is used by PointSix Link and Point Managers. The Link and Point Managers use this protocol to collect data from PointSix Point Sensors. This App-ID covers communication from Link and Point managers to Point Sensors.</description>
-          <alg>yes</alg>
-          <appident>yes</appident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>no</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <decode>iot</decode>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <references>
-            <entry name="PointSix Wireless">
-              <link>http://www.pointsix.com/index.html</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/dynamic</member>
-            </port>
-          </default>
-          <risk>1</risk>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10835" minver="8.1.0" name="rdsci-datatron-ext" ori_country="USA" ori_language="English">
-          <category>business-systems</category>
-          <subcategory>ics-protocols</subcategory>
-          <technology>client-server</technology>
-          <description>The Datatron EXT Environmental Monitoring System has been specifically designed to monitor environmental variables such as temperature of refrigerators, freezers, incubators, storage rooms, test chambers, LN2 tanks, ovens and real world condition such as humidity, Pressure and CO2. This App-ID covers communication between the monitoring sensors and the application server.</description>
-          <appident>yes</appident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>no</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <references>
-            <entry name="R&amp;amp;D Scientific">
-              <link>http://www.rdsci.com/</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/dynamic</member>
-            </port>
-          </default>
-          <risk>1</risk>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10832" minver="8.1.0" name="tresorit-downloading" ori_country="USA" ori_language="English">
-          <category>saas</category>
-          <subcategory>storage-backup</subcategory>
-          <technology>client-server</technology>
-          <description>Tresorit is an online cloud storage service based in Switzerland and Hungary that emphasizes enhanced security and data encryption for businesses. This App-ID covers the downloading traffic for Tresorit app.</description>
-          <appident>yes</appident>
-          <spyware-ident>yes</spyware-ident>
-          <vulnerability-ident>yes</vulnerability-ident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>yes</able-to-transfer-file>
-          <has-known-vulnerability>yes</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <breaks-decryption>yes</breaks-decryption>
-          <can-disable>yes</can-disable>
-          <is-saas>yes</is-saas>
-          <saas minver="8.1.0">
-            <is-data-breaches>no</is-data-breaches>
-            <is-ip-based-restrictions>no</is-ip-based-restrictions>
-            <is-poor-financial-viability>no</is-poor-financial-viability>
-            <is-poor-terms-of-service>no</is-poor-terms-of-service>
-          </saas>
-          <references>
-            <entry name="Wikipedia">
-              <link>https://en.wikipedia.org/wiki/Tresorit</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/80,443</member>
-            </port>
-          </default>
-          <use-applications minver="5.0.0">
-            <member minver="5.0.0">tresorit-base</member>
-          </use-applications>
-          <risk>2</risk>
-          <parent-app>tresorit-base</parent-app>
-          <preview>yes</preview>
-        </entry>
-        <entry id="2698" minver="5.0.0" name="tresorit-base" ori_country="USA" ori_language="English">
-          <ottawa-name>tresorit</ottawa-name>
-          <category>saas</category>
-          <subcategory>storage-backup</subcategory>
-          <technology>client-server</technology>
-          <description>Tresorit is an online cloud storage service based in Switzerland and Hungary that emphasizes enhanced security and data encryption for businesses.</description>
-          <appident>yes</appident>
-          <spyware-ident>yes</spyware-ident>
-          <vulnerability-ident>yes</vulnerability-ident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>yes</able-to-transfer-file>
-          <has-known-vulnerability>yes</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <breaks-decryption>yes</breaks-decryption>
-          <can-disable>yes</can-disable>
-          <is-saas>yes</is-saas>
-          <saas minver="8.1.0">
-            <is-data-breaches>no</is-data-breaches>
-            <is-ip-based-restrictions>no</is-ip-based-restrictions>
-            <is-poor-financial-viability>no</is-poor-financial-viability>
-            <is-poor-terms-of-service>no</is-poor-terms-of-service>
-          </saas>
-          <references>
-            <entry name="Wikipedia">
-              <link>https://en.wikipedia.org/wiki/Tresorit</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/80,443</member>
-            </port>
-          </default>
-          <use-applications>
-            <member>ssl</member>
-            <member>web-browsing</member>
-          </use-applications>
-          <tunnel-applications minver="8.1.0">
-            <member minver="8.1.0">tresorit-downloading</member>
-            <member minver="8.1.0">tresorit-uploading</member>
-          </tunnel-applications>
-          <applicable-decoders>
-            <member>http</member>
-            <member>ssl</member>
-          </applicable-decoders>
-          <risk>2</risk>
-          <application-container>tresorit</application-container>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10831" minver="8.1.0" name="tresorit-uploading" ori_country="USA" ori_language="English">
-          <category>saas</category>
-          <subcategory>storage-backup</subcategory>
-          <technology>client-server</technology>
-          <description>Tresorit is an online cloud storage service based in Switzerland and Hungary that emphasizes enhanced security and data encryption for businesses. This App-ID covers the uploading traffic for Tresorit app.</description>
-          <appident>yes</appident>
-          <spyware-ident>yes</spyware-ident>
-          <vulnerability-ident>yes</vulnerability-ident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>yes</able-to-transfer-file>
-          <has-known-vulnerability>yes</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <breaks-decryption>yes</breaks-decryption>
-          <can-disable>yes</can-disable>
-          <is-saas>yes</is-saas>
-          <saas minver="8.1.0">
-            <is-data-breaches>no</is-data-breaches>
-            <is-ip-based-restrictions>no</is-ip-based-restrictions>
-            <is-poor-financial-viability>no</is-poor-financial-viability>
-            <is-poor-terms-of-service>no</is-poor-terms-of-service>
-          </saas>
-          <references>
-            <entry name="Wikipedia">
-              <link>https://en.wikipedia.org/wiki/Tresorit</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/80,443</member>
-            </port>
-          </default>
-          <use-applications minver="5.0.0">
-            <member minver="5.0.0">tresorit-base</member>
-          </use-applications>
-          <risk>2</risk>
-          <parent-app>tresorit-base</parent-app>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10830" minver="8.1.0" name="tyco-access" ori_country="USA" ori_language="English">
-          <category>business-systems</category>
-          <subcategory>ics-protocols</subcategory>
-          <technology>client-server</technology>
-          <description>Tyco's access control solutions serve a wide range of security use cases, from standalone buildings to complex global enterprises, as well as provide cyber resiliency, business efficiency, and intelligence. This App-ID covers the traffic between client devices and Tyco access controllers.</description>
-          <appident>yes</appident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>no</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <deny-action>drop-reset</deny-action>
-          <cachable>no</cachable>
-          <references>
-            <entry name="Tyco Access Control">
-              <link>https://www.tyco.com/access-control</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>tcp/2800</member>
-            </port>
-          </default>
-          <risk>1</risk>
-          <preview>yes</preview>
-        </entry>
-        <entry id="10838" minver="8.1.0" name="vocera-badge" ori_country="USA" ori_language="English">
-          <category>business-systems</category>
-          <subcategory>medical</subcategory>
-          <technology>client-server</technology>
-          <description>Vocera badge is a wearable piece of technology that helps healthcare workers effectively communicate with each other. Just press a button and say the name of a person, role, or group to reach the right person in the right place at the right time. Quickly locate colleagues and summon help in an emergency. Mobilise code teams immediately. This App-ID covers the signaling traffic between Vocera badge and Vocera servers.</description>
-          <alg>yes</alg>
-          <appident>yes</appident>
-          <evasive-behavior>no</evasive-behavior>
-          <consume-big-bandwidth>no</consume-big-bandwidth>
-          <used-by-malware>no</used-by-malware>
-          <able-to-transfer-file>no</able-to-transfer-file>
-          <has-known-vulnerability>no</has-known-vulnerability>
-          <tunnel-other-application>no</tunnel-other-application>
-          <prone-to-misuse>no</prone-to-misuse>
-          <pervasive-use>no</pervasive-use>
-          <per-direction-regex>no</per-direction-regex>
-          <decode>medical</decode>
-          <deny-action>drop</deny-action>
-          <cachable>no</cachable>
-          <new-appid>yes</new-appid>
-          <references>
-            <entry name="Vocera">
-              <link>https://www.vocera.com/product/vocera-badge</link>
-            </entry>
-          </references>
-          <default>
-            <port>
-              <member>udp/5002</member>
-            </port>
-          </default>
-          <risk>1</risk>
-          <preview>yes</preview>
-        </entry>
-      </application>
+      <application/>
       <application-type>
         <category/>
         <technology/>
@@ -1659,7 +979,7 @@
             <superuser>yes</superuser>
           </role-based>
         </permissions>
-        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEVzlZcVo1YmFvVG9PMWpIUURwRFhDNjh2ZHViWlVjWCttU2cwclBKQUVBV2xVeHFZd3FJcUkrUTJnRlQ5VHZ2Vys5V1Q3NzNITDJRdkkvdGVQS2djOXA2MHFBdG1QYXZwQlcycjE2bThBRHFUSE1LbHdUQnFoT3BHanFzMmlOMVVzN042cW8wNHlRWkZyeExBNHowQUYvQTdOQTBOeTBacWk4aXpienVVUEZIUHRFMWJiQUZyU0ZFU1hWL0oxWW9VK05GRkZKZ01xNXBJTDErUVc3cmVVTk9zclM4Zmw0KzFmN0dhQ01uRFhlTU5BWTB3QS9JR2kzWEczYmNwVEpObDZ5NTk2OEY1OE5VQ1JlSk92V0RFeXE2UHN1Nk1wbE5pLzFyTHJkYmxva1N3eTFEMlV2VWpFcDkzSXBsVFFSTEhCKzBSUyt2d1YzejR0MmFCdlRscWogcXdpa0xBQlMtTDE4MDU1LTI2NTg0Cg==</public-key>
+        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEQTBHbjZtSzVYYTFuVU9JemVPalBzM2h5a2dQNWMrWVZBalNOcTFwZEVaRGZ1VDU4cEpGYUxMUmZUejA3b0JlRjFtb2lhVVVScHJUNytEdGkzak52ZTBSTTY4TVB5MTJiVlVKdTlTUW5xVVljSGg2UzFVLzgxellDcmxMaGZ4VHozR3IyTmRyNkR4K3Y5dHdFc0s5Z2FxbkJwQ3NHelZpUW1pa28ycE0vY3l3anhVNHRJWmp2WnBiRHlDTWNnTElubkxVaVpXQjlDTzJlVWE3RDZQTDBhZXNsNFZLQlNvODdZeEg5Y1VCMkZmMmJnYzlhZzVmYThJSFVkU3hQY1FUL0dHcnZqR3ZCZXdJaG8yRWhwRDhtdmJMYURJbDBuRDVUQ1lIOWRXK3NDMlNteHVLSFI3dUhlWW5BMTFTTmNOakVLc0VmYytrcVc2TVQ2dTNGand3N3AgY3Mta2V5Cg==</public-key>
       </entry>
     </users>
     <password-complexity>

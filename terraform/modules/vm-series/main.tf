@@ -45,6 +45,14 @@ resource "aws_s3_bucket" "bootstrap_bucket_ngfw" {
 resource "aws_s3_bucket_acl" "bootstrap_bucket_ngfw_acl" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
   acl    = "private"
+  depends_on = [aws_s3_bucket_ownership_controls.s3_bucket_acl_ownership]
+}
+
+resource "aws_s3_bucket_ownership_controls" "s3_bucket_acl_ownership" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  rule {
+    object_ownership = "ObjectWriter"
+  }
 }
 
 resource "aws_vpc_endpoint" "s3" {
@@ -199,4 +207,3 @@ output "firewall" {
 output "firewall-ip" {
   value = aws_eip.elasticip.public_ip
 }
-

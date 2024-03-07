@@ -25,3 +25,18 @@ sleep 5
 
 # Update the domain name of the attack server
 sudo docker exec -it vul-app-1 /bin/sh -c 'echo "10.2.1.100        att-svr" >> /etc/hosts'
+
+## Setup Mysql container
+# docker run \
+#   --name mysql \
+#   -e MYSQL_ALLOW_EMPTY_PASSWORD=yes \
+#   -p 3306:3306 \
+#   -d \
+#   mysql:5.7
+
+docker run \
+  --name mysql \
+  -e MYSQL_ROOT_PASSWORD=HelloWorld123 \
+  -p 3306:3306 \
+  -d \
+  mysql:5.7
