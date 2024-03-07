@@ -832,35 +832,13 @@
           <update-schedule>
             <threats>
               <recurring>
-                <every-30-mins>
-                  <action>download-and-install</action>
-                </every-30-mins>
-                <threshold>1</threshold>
+                <weekly>
+                  <day-of-week>wednesday</day-of-week>
+                  <at>01:02</at>
+                  <action>download-only</action>
+                </weekly>
               </recurring>
             </threats>
-            <anti-virus>
-              <recurring>
-                <hourly>
-                  <action>download-and-install</action>
-                </hourly>
-                <threshold>1</threshold>
-              </recurring>
-            </anti-virus>
-            <global-protect-clientless-vpn>
-              <recurring>
-                <hourly>
-                  <action>download-and-install</action>
-                </hourly>
-              </recurring>
-            </global-protect-clientless-vpn>
-            <wildfire>
-              <recurring>
-                <every-15-mins>
-                  <at>0</at>
-                  <action>download-and-install</action>
-                </every-15-mins>
-              </recurring>
-            </wildfire>
           </update-schedule>
           <timezone>US/Pacific</timezone>
           <service>
