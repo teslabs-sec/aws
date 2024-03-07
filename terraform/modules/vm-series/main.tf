@@ -39,8 +39,12 @@ resource "random_string" "randomstring" {
 
 resource "aws_s3_bucket" "bootstrap_bucket_ngfw" {
   bucket        = "${join("", tolist(["aws-gwlb-vm-series-bootstrap", "-", random_string.randomstring.result]))}"
-  acl           = "private"
   force_destroy = true
+}
+
+resource "aws_s3_bucket_acl" "bootstrap_bucket_ngfw_acl" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  acl    = "private"
 }
 
 resource "aws_vpc_endpoint" "s3" {
@@ -53,35 +57,35 @@ resource "aws_vpc_endpoint_route_table_association" "s3" {
   vpc_endpoint_id = aws_vpc_endpoint.s3.id
 }
 
-resource "aws_s3_bucket_object" "bootstrap_xml" {
+resource "aws_s3_object" "bootstrap_xml" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
   acl    = "private"
   key    = "config/bootstrap.xml"
   source = "../modules/bootstrap_files/bootstrap.xml"
 }
 
-resource "aws_s3_bucket_object" "init-cft_txt" {
+resource "aws_s3_object" "init-cft_txt" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
   acl    = "private"
   key    = "config/init-cfg.txt"
   source = "../modules/bootstrap_files/init-cfg.txt"
 }
 
-resource "aws_s3_bucket_object" "software" {
+resource "aws_s3_object" "software" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
   acl    = "private"
   key    = "software/"
   source = "/dev/null"
 }
 
-resource "aws_s3_bucket_object" "license" {
+resource "aws_s3_object" "license" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
   acl    = "private"
   key    = "license/authcodes"
   source = "/dev/null"
 }
 
-resource "aws_s3_bucket_object" "content" {
+resource "aws_s3_object" "content" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
   acl    = "private"
   key    = "content/"
@@ -195,3 +199,4 @@ output "firewall" {
 output "firewall-ip" {
   value = aws_eip.elasticip.public_ip
 }
+
