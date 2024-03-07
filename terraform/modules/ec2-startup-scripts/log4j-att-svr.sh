@@ -70,28 +70,21 @@ sudo docker container run -itd --rm --name att-svr -p 8888:8888 -p 1389:1389 us.
 # EOH
 
 cat << EOH > /tmp/scripts/launch_windows_executable.sh
-echo -e "Inline ML - Windows Executables Test File Detection...\n"
-curl -m 5 -s -o /dev/null -w "%{http_code}" http://wildfire.paloaltonetworks.com/publicapi/test/pe
-echo -e "\n"
-curl -m 5 -s -o /dev/null -w "%{http_code}" http://wildfire.paloaltonetworks.com/publicapi/test/pe
-echo -e "\n"
-curl -m 5 -s -o /dev/null -w "%{http_code}" http://wildfire.paloaltonetworks.com/publicapi/test/elf
-echo -e "\n"
-curl -m 5 -s -o /dev/null -w "%{http_code}" https://secure.eicar.org/eicar.com.txt
-echo -e "\n"
-curl -m 5 -s -o /dev/null -w "%{http_code}" http://urlfiltering.paloaltonetworks.com/test-malware
-echo -e "\n"
+echo -e "\nInline ML - Windows Executables Test File Detection...\n"
+curl -m 5 -s -o /dev/null -w "%{http_code}" http://wildfire.paloaltonetworks.com/publicapi/test/pe && echo -e "\n"
+curl -m 5 -s -o /dev/null -w "%{http_code}" http://wildfire.paloaltonetworks.com/publicapi/test/pe && echo -e "\n"
+curl -m 5 -s -o /dev/null -w "%{http_code}" http://wildfire.paloaltonetworks.com/publicapi/test/elf && echo -e "\n"
+curl -m 5 -s -o /dev/null -w "%{http_code}" https://secure.eicar.org/eicar.com.txt && echo -e "\n"
+curl -m 5 -s -o /dev/null -w "%{http_code}" http://urlfiltering.paloaltonetworks.com/test-malware && echo -e "\n"
 EOH
 
 cat << EOH > /tmp/scripts/launch_js_phishing.sh
 echo -e "Inline ML - Javascript Exploit & Phishing Detection...\n"
-curl -m 5 -s -o /dev/null -w "%{http_code}" http://mlav.testpanw.com/js.html
-echo -e "\n"
-curl -m 5 -s -o /dev/null -w "%{http_code}" http://mlav.testpanw.com/phishing.html
-echo -e "\n"
-curl -m 5 -s -o /dev/null -w "%{http_code}" http://urlfiltering.paloaltonetworks.com/test-phishing
-echo -e "\n"
+curl -m 5 -s -o /dev/null -w "%{http_code}" http://mlav.testpanw.com/js.html && echo -e "\n"
+curl -m 5 -s -o /dev/null -w "%{http_code}" http://mlav.testpanw.com/phishing.html && echo -e "\n"
+curl -m 5 -s -o /dev/null -w "%{http_code}" http://urlfiltering.paloaltonetworks.com/test-phishing && echo -e "\n"
 EOH
 
 sudo chown -R ec2-user:ec2-user /tmp/scripts
 sudo chmod +x /tmp/scripts/*
+
