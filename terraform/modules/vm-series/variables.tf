@@ -13,4 +13,3 @@ variable "bootstrap_options"    {}
 
 variable "prefix-name-tag"  {}
 variable "global_tags"      {}
-variable "ngfw_bootstrap_bucket" {}

@@ -2,7 +2,7 @@
 locals {
 
   bootstrap_params = {
-    "vmseries-bootstrap-aws-s3bucket" = var.ngfw_bootstrap_bucket
+    "vmseries-bootstrap-aws-s3bucket" = aws_s3_bucket.bootstrap_bucket_ngfw.id
   }
 
   bootstrap_options = merge(var.bootstrap_options, local.bootstrap_params)
@@ -30,15 +30,151 @@ data "aws_service" "s3" {
   service_id = "s3"
 }
 
-# resource "aws_vpc_endpoint" "s3" {
-#   vpc_id = var.vpc_id
-#   service_name = data.aws_service.s3.reverse_dns_name
-# }
-# 
-# resource "aws_vpc_endpoint_route_table_association" "s3" {
-#   route_table_id = var.route_table_ids["${var.vpc_name}-ngfw-mgmt-rt"]
-#   vpc_endpoint_id = aws_vpc_endpoint.s3.id
-# }
+resource "random_string" "randomstring" {
+  length      = 25
+  min_lower   = 15
+  min_numeric = 10
+  special     = false
+}
+
+resource "aws_s3_bucket" "bootstrap_bucket_ngfw" {
+  bucket        = "${join("", tolist(["aws-gwlb-vm-series-bootstrap", "-", random_string.randomstring.result]))}"
+  force_destroy = true
+}
+
+resource "aws_s3_bucket_acl" "bootstrap_bucket_ngfw_acl" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  acl    = "private"
+  depends_on = [aws_s3_bucket_ownership_controls.s3_bucket_acl_ownership]
+}
+
+resource "aws_s3_bucket_ownership_controls" "s3_bucket_acl_ownership" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  rule {
+    object_ownership = "ObjectWriter"
+  }
+}
+
+resource "aws_vpc_endpoint" "s3" {
+  vpc_id = var.vpc_id
+  service_name = data.aws_service.s3.reverse_dns_name
+}
+
+resource "aws_vpc_endpoint_route_table_association" "s3" {
+  route_table_id = var.route_table_ids["${var.vpc_name}-ngfw-mgmt-rt"]
+  vpc_endpoint_id = aws_vpc_endpoint.s3.id
+}
+
+resource "aws_s3_object" "bootstrap_xml" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  acl    = "private"
+  key    = "config/bootstrap.xml"
+  source = "../modules/bootstrap_files/bootstrap.xml"
+}
+
+resource "aws_s3_object" "init-cft_txt" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  acl    = "private"
+  key    = "config/init-cfg.txt"
+  source = "../modules/bootstrap_files/init-cfg.txt"
+}
+
+resource "aws_s3_object" "software" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  acl    = "private"
+  key    = "software/"
+  source = "/dev/null"
+}
+
+resource "aws_s3_object" "license" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  acl    = "private"
+  key    = "license/authcodes"
+  source = "/dev/null"
+}
+
+resource "aws_s3_object" "content" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  acl    = "private"
+  key    = "content/"
+  source = "/dev/null"
+}
+
+resource "aws_s3_object_copy" "panup-all-antivirus" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  key    = "content/panup-all-antivirus-4109-4622"
+  source = "aws-utd-bucket/content/panup-all-antivirus-4109-4622"
+  acl    = "private"
+}
+
+resource "aws_s3_object_copy" "panup-all-contents" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  key    = "content/panupv2-all-contents-8782-8414"
+  source = "aws-utd-bucket/content/panupv2-all-contents-8782-8414"
+  acl    = "private"
+}
+
+resource "aws_s3_object_copy" "panup-all-gp" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  key    = "content/panup-all-gp-94-237"
+  source = "aws-utd-bucket/content/panup-all-gp-94-237"
+  acl    = "private"
+}
+
+resource "aws_s3_object_copy" "panup-all-wildfire" {
+  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+  key    = "content/panupv3-all-wildfire-671311-674601"
+  source = "aws-utd-bucket/content/panupv3-all-wildfire-671311-674601"
+  acl    = "private"
+}
+
+resource "aws_iam_role" "bootstrap_role" {
+  name = "ngfw_bootstrap_role"
+
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+      "Service": "ec2.amazonaws.com"
+    },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role_policy" "bootstrap_policy" {
+  name = "ngfw_bootstrap_policy"
+  role = "${aws_iam_role.bootstrap_role.id}"
+
+  policy = <<EOF
+{
+  "Version" : "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::${aws_s3_bucket.bootstrap_bucket_ngfw.id}"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::${aws_s3_bucket.bootstrap_bucket_ngfw.id}/*"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_instance_profile" "bootstrap_profile" {
+  name = "ngfw_bootstrap_profile"
+  role = aws_iam_role.bootstrap_role.name
+  path = "/"
+}
 
 resource "aws_network_interface" "this" {
   for_each = { for interface in var.fw_interfaces: interface.name => interface }
@@ -61,6 +197,7 @@ resource "aws_instance" "vm-series" {
   ami                   = data.aws_ami.pa-vm.id
   instance_type         = each.value.instance_type
   ebs_optimized         = true
+  iam_instance_profile  = aws_iam_instance_profile.bootstrap_profile.id
 
   tags          = merge({ Name = "${var.prefix-name-tag}${each.value.name}" }, var.global_tags)
 
@@ -98,4 +235,3 @@ output "firewall" {
 output "firewall-ip" {
   value = aws_eip.elasticip.public_ip
 }
-

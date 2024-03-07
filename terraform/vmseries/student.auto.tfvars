@@ -6,7 +6,6 @@ access-key      = ""
 secret-key      = ""
 region          = ""
 ssh-key-name    = "cs-key"
-ngfw_bootstrap_bucket = "aws-utd-bucket-v3"
 
 prefix-name-tag     = "UTD-VM-Series-"      # Feel free to modify this if required. This prefix is just meant to make the lab resources identifiable
 global_tags         = {

@@ -50,7 +50,6 @@ module "vm-series" {
   security_groups   = module.security-vpc.security_groups
   bootstrap_options = var.firewall-bootstrap_options
   global_tags       = var.global_tags
-  ngfw_bootstrap_bucket = var.ngfw_bootstrap_bucket
 }
 
 locals {
