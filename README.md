@@ -51,4 +51,3 @@ Run the below commands to teardown the setup.
 cd utd-aws-vm-series/terraform/vmseries
 terraform destroy -auto-approve
 ```
-

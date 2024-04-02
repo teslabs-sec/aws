@@ -51,3 +51,4 @@ function deploy_vmseries_lab() {
 install_prerequisites
 install_terraform
 deploy_vmseries_lab
+
