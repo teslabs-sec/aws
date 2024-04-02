@@ -1,4 +1,3 @@
-
 attack-vpc = {
     name                 = "att-vpc"
     cidr_block           = "10.2.0.0/16"

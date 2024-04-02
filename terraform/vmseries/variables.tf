@@ -1,4 +1,3 @@
-
 variable "vulnerable-vpc" { default = {} }
 variable "vulnerable-vpc-subnets" { default = [] }
 variable "vulnerable-vpc-route-tables" { default = [] }
