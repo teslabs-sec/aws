@@ -177,7 +177,7 @@ transit-gateway-routes = {
   }
 }
 
-fw_version = "10.2.1"
+fw_version = "10.2.9"
 fw_product_code = ["hd44w1chf26uv4p52cdynb2o"]
 
 firewalls = [
