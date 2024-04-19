@@ -110,7 +110,7 @@ resource "aws_s3_object_copy" "panup-all-antivirus" {
 resource "aws_s3_object_copy" "panup-all-contents" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
   key    = "content/panupv2-all-contents-8836-8695"
-  source = "aws-utd-bucket-v3/content/panupv2-all-contents-8836-8695"
+  source = "aws-utd-bucket-v3/content/panupv2-all-contents-8835-8689"
   acl    = "private"
 }
 
