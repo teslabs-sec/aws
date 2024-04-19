@@ -102,29 +102,29 @@ resource "aws_s3_object" "content" {
 
 resource "aws_s3_object_copy" "panup-all-antivirus" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
-  key    = "content/panup-all-antivirus-4109-4622"
-  source = "aws-utd-bucket/content/panup-all-antivirus-4109-4622"
+  key    = "content/panup-all-antivirus-4793-5311"
+  source = "aws-utd-bucket-v3/content/panup-all-antivirus-4793-5311"
   acl    = "private"
 }
 
 resource "aws_s3_object_copy" "panup-all-contents" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
-  key    = "content/panupv2-all-contents-8782-8414"
-  source = "aws-utd-bucket/content/panupv2-all-contents-8782-8414"
+  key    = "content/panupv2-all-contents-8836-8695"
+  source = "aws-utd-bucket-v3/content/panupv2-all-contents-8836-8695"
   acl    = "private"
 }
 
 resource "aws_s3_object_copy" "panup-all-gp" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
   key    = "content/panup-all-gp-94-237"
-  source = "aws-utd-bucket/content/panup-all-gp-94-237"
+  source = "aws-utd-bucket-v3/content/panup-all-gp-94-237"
   acl    = "private"
 }
 
 resource "aws_s3_object_copy" "panup-all-wildfire" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
   key    = "content/panupv3-all-wildfire-671311-674601"
-  source = "aws-utd-bucket/content/panupv3-all-wildfire-671311-674601"
+  source = "aws-utd-bucket-v3/content/panupv3-all-wildfire-671311-674601"
   acl    = "private"
 }
 
@@ -266,3 +266,4 @@ output "firewall" {
 output "firewall-ip" {
   value = aws_eip.elasticip.public_ip
 }
+
