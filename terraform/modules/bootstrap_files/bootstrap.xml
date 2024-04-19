@@ -669,8 +669,8 @@
             </dos>
           </rulebase>
           <address>
-            <entry name="VulnerableAPP" loc="shared">
-              <ip-netmask loc="shared">10.1.1.100</ip-netmask>
+            <entry name="VulnerableAPP">
+              <ip-netmask>10.1.1.100</ip-netmask>
             </entry>
           </address>
           <address-group/>
@@ -788,26 +788,26 @@
             </spyware>
             <vulnerability/>
             <url-filtering>
-              <entry name="Outbound-URL" loc="shared">
-                <credential-enforcement loc="shared">
-                  <mode loc="shared">
-                    <disabled loc="shared"/>
+              <entry name="Outbound-URL">
+                <credential-enforcement>
+                  <mode>
+                    <disabled/>
                   </mode>
-                  <log-severity loc="shared">medium</log-severity>
-                  <block loc="shared">
-                    <member loc="shared">grayware</member>
-                    <member loc="shared">hacking</member>
-                    <member loc="shared">malware</member>
-                    <member loc="shared">phishing</member>
-                    <member loc="shared">private-ip-addresses</member>
+                  <log-severity>medium</log-severity>
+                  <block>
+                    <member>grayware</member>
+                    <member>hacking</member>
+                    <member>malware</member>
+                    <member>phishing</member>
+                    <member>private-ip-addresses</member>
                   </block>
                 </credential-enforcement>
-                <block loc="shared">
-                  <member loc="shared">grayware</member>
-                  <member loc="shared">hacking</member>
-                  <member loc="shared">malware</member>
-                  <member loc="shared">phishing</member>
-                  <member loc="shared">private-ip-addresses</member>
+                <block>
+                  <member>grayware</member>
+                  <member>hacking</member>
+                  <member>malware</member>
+                  <member>phishing</member>
+                  <member>private-ip-addresses</member>
                 </block>
               </entry>
             </url-filtering>
@@ -970,4 +970,3 @@
     </password-complexity>
   </mgt-config>
 </config>
-
