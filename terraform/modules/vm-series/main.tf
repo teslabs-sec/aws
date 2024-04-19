@@ -100,17 +100,17 @@ resource "aws_s3_object" "content" {
   source = "/dev/null"
 }
 
-resource "aws_s3_object_copy" "panup-all-antivirus" {
-  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
-  key    = "content/panup-all-antivirus-4793-5311"
-  source = "aws-utd-bucket-v3/content/panup-all-antivirus-4793-5311"
-  acl    = "private"
-}
+#resource "aws_s3_object_copy" "panup-all-antivirus" {
+#  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+#  key    = "content/panup-all-antivirus-4793-5311"
+#  source = "aws-utd-bucket-v3/content/panup-all-antivirus-4793-5311"
+#  acl    = "private"
+#}
 
 resource "aws_s3_object_copy" "panup-all-contents" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
   key    = "content/panupv2-all-contents-8836-8695"
-  source = "aws-utd-bucket-v3/content/panupv2-all-contents-8835-8689"
+  source = "aws-utd-bucket-v3/content/panupv2-all-contents-8838-8701"
   acl    = "private"
 }
 
