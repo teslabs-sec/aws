@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<config version="10.2.0" urldb="paloaltonetworks" detail-version="10.2.1">
+<config version="10.2.0" urldb="paloaltonetworks" detail-version="10.2.9">
   <devices>
     <entry name="localhost.localdomain">
       <network>
@@ -669,8 +669,8 @@
             </dos>
           </rulebase>
           <address>
-            <entry name="VulnerableAPP" loc="shared">
-              <ip-netmask loc="shared">10.1.1.100</ip-netmask>
+            <entry name="VulnerableAPP">
+              <ip-netmask>10.1.1.100</ip-netmask>
             </entry>
           </address>
           <address-group/>
@@ -751,97 +751,97 @@
               </entry>
             </virus>
             <spyware>
-              <entry name="Log4j-Outbound-AntiSpyware" loc="shared">
-                <botnet-domains loc="shared">
-                  <lists loc="shared">
-                    <entry name="default-paloalto-dns" loc="shared">
-                      <action loc="shared">
-                        <sinkhole loc="shared"/>
+              <entry name="Log4j-Outbound-AntiSpyware">
+                <botnet-domains>
+                  <lists>
+                    <entry name="default-paloalto-dns">
+                      <action>
+                        <sinkhole/>
                       </action>
-                      <packet-capture loc="shared">disable</packet-capture>
+                      <packet-capture>disable</packet-capture>
                     </entry>
                   </lists>
-                  <dns-security-categories loc="shared">
-                    <entry name="pan-dns-sec-cc" loc="shared">
-                      <log-level loc="shared">default</log-level>
-                      <action loc="shared">default</action>
-                      <packet-capture loc="shared">disable</packet-capture>
+                  <dns-security-categories>
+                    <entry name="pan-dns-sec-adtracking">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
                     </entry>
-                    <entry name="pan-dns-sec-adtracking" loc="shared">
-                      <log-level loc="shared">default</log-level>
-                      <action loc="shared">default</action>
-                      <packet-capture loc="shared">disable</packet-capture>
+                    <entry name="pan-dns-sec-cc">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
                     </entry>
-                    <entry name="pan-dns-sec-ddns" loc="shared">
-                      <log-level loc="shared">default</log-level>
-                      <action loc="shared">default</action>
-                      <packet-capture loc="shared">disable</packet-capture>
+                    <entry name="pan-dns-sec-ddns">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
                     </entry>
-                    <entry name="pan-dns-sec-grayware" loc="shared">
-                      <log-level loc="shared">default</log-level>
-                      <action loc="shared">default</action>
-                      <packet-capture loc="shared">disable</packet-capture>
+                    <entry name="pan-dns-sec-grayware">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
                     </entry>
-                    <entry name="pan-dns-sec-malware" loc="shared">
-                      <log-level loc="shared">default</log-level>
-                      <action loc="shared">default</action>
-                      <packet-capture loc="shared">disable</packet-capture>
+                    <entry name="pan-dns-sec-malware">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
                     </entry>
-                    <entry name="pan-dns-sec-parked" loc="shared">
-                      <log-level loc="shared">default</log-level>
-                      <action loc="shared">default</action>
-                      <packet-capture loc="shared">disable</packet-capture>
+                    <entry name="pan-dns-sec-parked">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
                     </entry>
-                    <entry name="pan-dns-sec-phishing" loc="shared">
-                      <log-level loc="shared">default</log-level>
-                      <action loc="shared">default</action>
-                      <packet-capture loc="shared">disable</packet-capture>
+                    <entry name="pan-dns-sec-phishing">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
                     </entry>
-                    <entry name="pan-dns-sec-proxy" loc="shared">
-                      <log-level loc="shared">default</log-level>
-                      <action loc="shared">default</action>
-                      <packet-capture loc="shared">disable</packet-capture>
+                    <entry name="pan-dns-sec-proxy">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
                     </entry>
-                    <entry name="pan-dns-sec-recent" loc="shared">
-                      <log-level loc="shared">default</log-level>
-                      <action loc="shared">default</action>
-                      <packet-capture loc="shared">disable</packet-capture>
+                    <entry name="pan-dns-sec-recent">
+                      <log-level>default</log-level>
+                      <action>default</action>
+                      <packet-capture>disable</packet-capture>
                     </entry>
                   </dns-security-categories>
-                  <sinkhole loc="shared">
-                    <ipv4-address loc="shared">pan-sinkhole-default-ip</ipv4-address>
-                    <ipv6-address loc="shared">::1</ipv6-address>
+                  <sinkhole>
+                    <ipv4-address>pan-sinkhole-default-ip</ipv4-address>
+                    <ipv6-address>::1</ipv6-address>
                   </sinkhole>
                 </botnet-domains>
-                <rules loc="shared">
-                  <entry name="critical" loc="shared">
-                    <action loc="shared">
-                      <default loc="shared"/>
+                <rules>
+                  <entry name="critical">
+                    <action>
+                      <default/>
                     </action>
-                    <severity loc="shared">
-                      <member loc="shared">critical</member>
-                      <member loc="shared">high</member>
+                    <severity>
+                      <member>critical</member>
+                      <member>high</member>
                     </severity>
-                    <threat-name loc="shared">any</threat-name>
-                    <category loc="shared">any</category>
-                    <packet-capture loc="shared">disable</packet-capture>
+                    <threat-name>any</threat-name>
+                    <category>any</category>
+                    <packet-capture>disable</packet-capture>
                   </entry>
                 </rules>
-                <mica-engine-spyware-enabled loc="shared">
-                  <entry name="HTTP Command and Control detector" loc="shared">
-                    <inline-policy-action loc="shared">alert</inline-policy-action>
+                <mica-engine-spyware-enabled>
+                  <entry name="HTTP Command and Control detector">
+                    <inline-policy-action>alert</inline-policy-action>
                   </entry>
-                  <entry name="HTTP2 Command and Control detector" loc="shared">
-                    <inline-policy-action loc="shared">alert</inline-policy-action>
+                  <entry name="HTTP2 Command and Control detector">
+                    <inline-policy-action>alert</inline-policy-action>
                   </entry>
-                  <entry name="SSL Command and Control detector" loc="shared">
-                    <inline-policy-action loc="shared">alert</inline-policy-action>
+                  <entry name="SSL Command and Control detector">
+                    <inline-policy-action>alert</inline-policy-action>
                   </entry>
-                  <entry name="Unknown-TCP Command and Control detector" loc="shared">
-                    <inline-policy-action loc="shared">alert</inline-policy-action>
+                  <entry name="Unknown-TCP Command and Control detector">
+                    <inline-policy-action>alert</inline-policy-action>
                   </entry>
-                  <entry name="Unknown-UDP Command and Control detector" loc="shared">
-                    <inline-policy-action loc="shared">alert</inline-policy-action>
+                  <entry name="Unknown-UDP Command and Control detector">
+                    <inline-policy-action>alert</inline-policy-action>
                   </entry>
                 </mica-engine-spyware-enabled>
               </entry>
@@ -855,155 +855,19 @@
                   </mode>
                   <log-severity>medium</log-severity>
                   <block>
-                    <member>abortion</member>
-                    <member>abused-drugs</member>
-                    <member>adult</member>
-                    <member>alcohol-and-tobacco</member>
-                    <member>auctions</member>
-                    <member>business-and-economy</member>
-                    <member>command-and-control</member>
-                    <member>computer-and-internet-info</member>
-                    <member>content-delivery-networks</member>
-                    <member>copyright-infringement</member>
-                    <member>cryptocurrency</member>
-                    <member>dating</member>
-                    <member>dynamic-dns</member>
-                    <member>educational-institutions</member>
-                    <member>entertainment-and-arts</member>
-                    <member>extremism</member>
-                    <member>financial-services</member>
-                    <member>gambling</member>
-                    <member>games</member>
-                    <member>government</member>
                     <member>grayware</member>
                     <member>hacking</member>
-                    <member>health-and-medicine</member>
-                    <member>high-risk</member>
-                    <member>home-and-garden</member>
-                    <member>hunting-and-fishing</member>
-                    <member>insufficient-content</member>
-                    <member>internet-communications-and-telephony</member>
-                    <member>internet-portals</member>
-                    <member>job-search</member>
-                    <member>legal</member>
-                    <member>low-risk</member>
                     <member>malware</member>
-                    <member>medium-risk</member>
-                    <member>military</member>
-                    <member>motor-vehicles</member>
-                    <member>music</member>
-                    <member>newly-registered-domain</member>
-                    <member>news</member>
-                    <member>not-resolved</member>
-                    <member>nudity</member>
-                    <member>online-storage-and-backup</member>
-                    <member>parked</member>
-                    <member>peer-to-peer</member>
-                    <member>personal-sites-and-blogs</member>
-                    <member>philosophy-and-political-advocacy</member>
                     <member>phishing</member>
                     <member>private-ip-addresses</member>
-                    <member>proxy-avoidance-and-anonymizers</member>
-                    <member>questionable</member>
-                    <member>real-estate</member>
-                    <member>real-time-detection</member>
-                    <member>recreation-and-hobbies</member>
-                    <member>reference-and-research</member>
-                    <member>religion</member>
-                    <member>search-engines</member>
-                    <member>sex-education</member>
-                    <member>shareware-and-freeware</member>
-                    <member>shopping</member>
-                    <member>social-networking</member>
-                    <member>society</member>
-                    <member>sports</member>
-                    <member>stock-advice-and-tools</member>
-                    <member>streaming-media</member>
-                    <member>swimsuits-and-intimate-apparel</member>
-                    <member>training-and-tools</member>
-                    <member>translation</member>
-                    <member>travel</member>
-                    <member>unknown</member>
-                    <member>weapons</member>
-                    <member>web-advertisements</member>
-                    <member>web-based-email</member>
-                    <member>web-hosting</member>
                   </block>
                 </credential-enforcement>
                 <block>
-                  <member>abortion</member>
-                  <member>abused-drugs</member>
-                  <member>adult</member>
-                  <member>alcohol-and-tobacco</member>
-                  <member>auctions</member>
-                  <member>business-and-economy</member>
-                  <member>command-and-control</member>
-                  <member>computer-and-internet-info</member>
-                  <member>content-delivery-networks</member>
-                  <member>copyright-infringement</member>
-                  <member>cryptocurrency</member>
-                  <member>dating</member>
-                  <member>dynamic-dns</member>
-                  <member>educational-institutions</member>
-                  <member>entertainment-and-arts</member>
-                  <member>extremism</member>
-                  <member>financial-services</member>
-                  <member>gambling</member>
-                  <member>games</member>
-                  <member>government</member>
                   <member>grayware</member>
                   <member>hacking</member>
-                  <member>health-and-medicine</member>
-                  <member>high-risk</member>
-                  <member>home-and-garden</member>
-                  <member>hunting-and-fishing</member>
-                  <member>insufficient-content</member>
-                  <member>internet-communications-and-telephony</member>
-                  <member>internet-portals</member>
-                  <member>job-search</member>
-                  <member>legal</member>
-                  <member>low-risk</member>
                   <member>malware</member>
-                  <member>medium-risk</member>
-                  <member>military</member>
-                  <member>motor-vehicles</member>
-                  <member>music</member>
-                  <member>newly-registered-domain</member>
-                  <member>news</member>
-                  <member>not-resolved</member>
-                  <member>nudity</member>
-                  <member>online-storage-and-backup</member>
-                  <member>parked</member>
-                  <member>peer-to-peer</member>
-                  <member>personal-sites-and-blogs</member>
-                  <member>philosophy-and-political-advocacy</member>
                   <member>phishing</member>
                   <member>private-ip-addresses</member>
-                  <member>proxy-avoidance-and-anonymizers</member>
-                  <member>questionable</member>
-                  <member>real-estate</member>
-                  <member>real-time-detection</member>
-                  <member>recreation-and-hobbies</member>
-                  <member>reference-and-research</member>
-                  <member>religion</member>
-                  <member>search-engines</member>
-                  <member>sex-education</member>
-                  <member>shareware-and-freeware</member>
-                  <member>shopping</member>
-                  <member>social-networking</member>
-                  <member>society</member>
-                  <member>sports</member>
-                  <member>stock-advice-and-tools</member>
-                  <member>streaming-media</member>
-                  <member>swimsuits-and-intimate-apparel</member>
-                  <member>training-and-tools</member>
-                  <member>translation</member>
-                  <member>travel</member>
-                  <member>unknown</member>
-                  <member>weapons</member>
-                  <member>web-advertisements</member>
-                  <member>web-based-email</member>
-                  <member>web-hosting</member>
                 </block>
               </entry>
             </url-filtering>
@@ -1062,7 +926,7 @@
             <product-usage>yes</product-usage>
             <threat-prevention>yes</threat-prevention>
             <region>Americas</region>
-          </device-telemetry>          
+          </device-telemetry>
         </system>
         <setting>
           <config>
@@ -1071,7 +935,7 @@
           <management>
             <hostname-type-in-syslog>FQDN</hostname-type-in-syslog>
             <initcfg>
-              <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEY0ZxSnBSRFc5ZHB5eFFKc3dyZEo5UWRVR0hNWDNtS1BMS0M0NnhBa01DazhvMUpuelZCVFRYZDBzaDVKUVZvcTJSa0M5c25oWXVpUFcrYTg3Y3YvWHVzZExxT2VVOERVdU11ZzJsamNxUWZITUpYL3MyeWlFN0JRVHlxYXpmbStNNDVLM2NITU5ER2dLSm9zY09iUjAxZVVWM0NFcTRGTm5sWDRrelJsZUg1UHlHRHJoMGx3aDA1NDZlM21kNW1FL1FuUHVtdGlOZjNpZWhURU9PK20vdHBDNGdBQXNSUVZkYlIzNjROZVhrUVJsWkRlcFRTcm5VdWpEb001V09Nb0c3RXZNZFczeFA0NVNubk1IVDJJdm00TENxcHlLdTJTTU43ZS9UM2ZKcmZ2N2VnY1NWdkNPYlpHT0IzWU5uUDdLTDM0SW5xeXUrTlpIWlJHSzE3MEIgY3Mta2V5Cg==</public-key>
+              <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEQTBHbjZtSzVYYTFuVU9JemVPalBzM2h5a2dQNWMrWVZBalNOcTFwZEVaRGZ1VDU4cEpGYUxMUmZUejA3b0JlRjFtb2lhVVVScHJUNytEdGkzak52ZTBSTTY4TVB5MTJiVlVKdTlTUW5xVVljSGg2UzFVLzgxellDcmxMaGZ4VHozR3IyTmRyNkR4K3Y5dHdFc0s5Z2FxbkJwQ3NHelZpUW1pa28ycE0vY3l3anhVNHRJWmp2WnBiRHlDTWNnTElubkxVaVpXQjlDTzJlVWE3RDZQTDBhZXNsNFZLQlNvODdZeEg5Y1VCMkZmMmJnYzlhZzVmYThJSFVkU3hQY1FUL0dHcnZqR3ZCZXdJaG8yRWhwRDhtdmJMYURJbDBuRDVUQ1lIOWRXK3NDMlNteHVLSFI3dUhlWW5BMTFTTmNOakVLc0VmYytrcVc2TVQ2dTNGand3N3AgY3Mta2V5Cg==</public-key>
               <type>
                 <dhcp-client>
                   <send-hostname>yes</send-hostname>
@@ -1157,7 +1021,7 @@
             <superuser>yes</superuser>
           </role-based>
         </permissions>
-        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEY0ZxSnBSRFc5ZHB5eFFKc3dyZEo5UWRVR0hNWDNtS1BMS0M0NnhBa01DazhvMUpuelZCVFRYZDBzaDVKUVZvcTJSa0M5c25oWXVpUFcrYTg3Y3YvWHVzZExxT2VVOERVdU11ZzJsamNxUWZITUpYL3MyeWlFN0JRVHlxYXpmbStNNDVLM2NITU5ER2dLSm9zY09iUjAxZVVWM0NFcTRGTm5sWDRrelJsZUg1UHlHRHJoMGx3aDA1NDZlM21kNW1FL1FuUHVtdGlOZjNpZWhURU9PK20vdHBDNGdBQXNSUVZkYlIzNjROZVhrUVJsWkRlcFRTcm5VdWpEb001V09Nb0c3RXZNZFczeFA0NVNubk1IVDJJdm00TENxcHlLdTJTTU43ZS9UM2ZKcmZ2N2VnY1NWdkNPYlpHT0IzWU5uUDdLTDM0SW5xeXUrTlpIWlJHSzE3MEIgY3Mta2V5Cg==</public-key>
+        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEQTBHbjZtSzVYYTFuVU9JemVPalBzM2h5a2dQNWMrWVZBalNOcTFwZEVaRGZ1VDU4cEpGYUxMUmZUejA3b0JlRjFtb2lhVVVScHJUNytEdGkzak52ZTBSTTY4TVB5MTJiVlVKdTlTUW5xVVljSGg2UzFVLzgxellDcmxMaGZ4VHozR3IyTmRyNkR4K3Y5dHdFc0s5Z2FxbkJwQ3NHelZpUW1pa28ycE0vY3l3anhVNHRJWmp2WnBiRHlDTWNnTElubkxVaVpXQjlDTzJlVWE3RDZQTDBhZXNsNFZLQlNvODdZeEg5Y1VCMkZmMmJnYzlhZzVmYThJSFVkU3hQY1FUL0dHcnZqR3ZCZXdJaG8yRWhwRDhtdmJMYURJbDBuRDVUQ1lIOWRXK3NDMlNteHVLSFI3dUhlWW5BMTFTTmNOakVLc0VmYytrcVc2TVQ2dTNGand3N3AgY3Mta2V5Cg==</public-key>
       </entry>
     </users>
     <password-complexity>
@@ -1166,3 +1030,4 @@
     </password-complexity>
   </mgt-config>
 </config>
+
