@@ -529,7 +529,7 @@
                   <log-setting>IoT Security Default Profile</log-setting>
                   <disabled>yes</disabled>
                 </entry>
-                <entry name="ZT-AV-and-URL-Filtering" uuid="ce38de81-5e0b-4502-84fa-d66da323403f">
+                <entry name="ZT-Segmentation-FE-to-Redis" uuid="6f7a5674-ae9d-4741-ad22-33d4f05d788a">
                   <to>
                     <member>any</member>
                   </to>
@@ -689,67 +689,7 @@
             <spyware/>
           </threats>
           <profiles>
-            <virus>
-              <entry name="UTD-AV">
-                <decoder>
-                  <entry name="ftp">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                  <entry name="http">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                  <entry name="http2">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                  <entry name="imap">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                  <entry name="pop3">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                  <entry name="smb">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                  <entry name="smtp">
-                    <action>default</action>
-                    <wildfire-action>default</wildfire-action>
-                    <mlav-action>default</mlav-action>
-                  </entry>
-                </decoder>
-                <mlav-engine-filebased-enabled>
-                  <entry name="Windows Executables">
-                    <mlav-policy-action>disable</mlav-policy-action>
-                  </entry>
-                  <entry name="PowerShell Script 1">
-                    <mlav-policy-action>disable</mlav-policy-action>
-                  </entry>
-                  <entry name="PowerShell Script 2">
-                    <mlav-policy-action>disable</mlav-policy-action>
-                  </entry>
-                  <entry name="Executable Linked Format">
-                    <mlav-policy-action>disable</mlav-policy-action>
-                  </entry>
-                  <entry name="MSOffice">
-                    <mlav-policy-action>disable</mlav-policy-action>
-                  </entry>
-                  <entry name="Shell">
-                    <mlav-policy-action>disable</mlav-policy-action>
-                  </entry>
-                </mlav-engine-filebased-enabled>
-              </entry>
-            </virus>
+            <virus/>
             <spyware>
               <entry name="Log4j-Outbound-AntiSpyware">
                 <botnet-domains>
@@ -848,162 +788,26 @@
             </spyware>
             <vulnerability/>
             <url-filtering>
-              <entry name="Outbound-URL">
-                <credential-enforcement>
-                  <mode>
-                    <disabled/>
+              <entry name="Outbound-URL" loc="shared">
+                <credential-enforcement loc="shared">
+                  <mode loc="shared">
+                    <disabled loc="shared"/>
                   </mode>
-                  <log-severity>medium</log-severity>
-                  <block>
-                    <member>abortion</member>
-                    <member>abused-drugs</member>
-                    <member>adult</member>
-                    <member>alcohol-and-tobacco</member>
-                    <member>auctions</member>
-                    <member>business-and-economy</member>
-                    <member>command-and-control</member>
-                    <member>computer-and-internet-info</member>
-                    <member>content-delivery-networks</member>
-                    <member>copyright-infringement</member>
-                    <member>cryptocurrency</member>
-                    <member>dating</member>
-                    <member>dynamic-dns</member>
-                    <member>educational-institutions</member>
-                    <member>entertainment-and-arts</member>
-                    <member>extremism</member>
-                    <member>financial-services</member>
-                    <member>gambling</member>
-                    <member>games</member>
-                    <member>government</member>
-                    <member>grayware</member>
-                    <member>hacking</member>
-                    <member>health-and-medicine</member>
-                    <member>high-risk</member>
-                    <member>home-and-garden</member>
-                    <member>hunting-and-fishing</member>
-                    <member>insufficient-content</member>
-                    <member>internet-communications-and-telephony</member>
-                    <member>internet-portals</member>
-                    <member>job-search</member>
-                    <member>legal</member>
-                    <member>low-risk</member>
-                    <member>malware</member>
-                    <member>medium-risk</member>
-                    <member>military</member>
-                    <member>motor-vehicles</member>
-                    <member>music</member>
-                    <member>newly-registered-domain</member>
-                    <member>news</member>
-                    <member>not-resolved</member>
-                    <member>nudity</member>
-                    <member>online-storage-and-backup</member>
-                    <member>parked</member>
-                    <member>peer-to-peer</member>
-                    <member>personal-sites-and-blogs</member>
-                    <member>philosophy-and-political-advocacy</member>
-                    <member>phishing</member>
-                    <member>private-ip-addresses</member>
-                    <member>proxy-avoidance-and-anonymizers</member>
-                    <member>questionable</member>
-                    <member>real-estate</member>
-                    <member>real-time-detection</member>
-                    <member>recreation-and-hobbies</member>
-                    <member>reference-and-research</member>
-                    <member>religion</member>
-                    <member>search-engines</member>
-                    <member>sex-education</member>
-                    <member>shareware-and-freeware</member>
-                    <member>shopping</member>
-                    <member>social-networking</member>
-                    <member>society</member>
-                    <member>sports</member>
-                    <member>stock-advice-and-tools</member>
-                    <member>streaming-media</member>
-                    <member>swimsuits-and-intimate-apparel</member>
-                    <member>training-and-tools</member>
-                    <member>translation</member>
-                    <member>travel</member>
-                    <member>unknown</member>
-                    <member>weapons</member>
-                    <member>web-advertisements</member>
-                    <member>web-based-email</member>
-                    <member>web-hosting</member>
+                  <log-severity loc="shared">medium</log-severity>
+                  <block loc="shared">
+                    <member loc="shared">grayware</member>
+                    <member loc="shared">hacking</member>
+                    <member loc="shared">malware</member>
+                    <member loc="shared">phishing</member>
+                    <member loc="shared">private-ip-addresses</member>
                   </block>
                 </credential-enforcement>
-                <block>
-                  <member>abortion</member>
-                  <member>abused-drugs</member>
-                  <member>adult</member>
-                  <member>alcohol-and-tobacco</member>
-                  <member>auctions</member>
-                  <member>business-and-economy</member>
-                  <member>command-and-control</member>
-                  <member>computer-and-internet-info</member>
-                  <member>content-delivery-networks</member>
-                  <member>copyright-infringement</member>
-                  <member>cryptocurrency</member>
-                  <member>dating</member>
-                  <member>dynamic-dns</member>
-                  <member>educational-institutions</member>
-                  <member>entertainment-and-arts</member>
-                  <member>extremism</member>
-                  <member>financial-services</member>
-                  <member>gambling</member>
-                  <member>games</member>
-                  <member>government</member>
-                  <member>grayware</member>
-                  <member>hacking</member>
-                  <member>health-and-medicine</member>
-                  <member>high-risk</member>
-                  <member>home-and-garden</member>
-                  <member>hunting-and-fishing</member>
-                  <member>insufficient-content</member>
-                  <member>internet-communications-and-telephony</member>
-                  <member>internet-portals</member>
-                  <member>job-search</member>
-                  <member>legal</member>
-                  <member>low-risk</member>
-                  <member>malware</member>
-                  <member>medium-risk</member>
-                  <member>military</member>
-                  <member>motor-vehicles</member>
-                  <member>music</member>
-                  <member>newly-registered-domain</member>
-                  <member>news</member>
-                  <member>not-resolved</member>
-                  <member>nudity</member>
-                  <member>online-storage-and-backup</member>
-                  <member>parked</member>
-                  <member>peer-to-peer</member>
-                  <member>personal-sites-and-blogs</member>
-                  <member>philosophy-and-political-advocacy</member>
-                  <member>phishing</member>
-                  <member>private-ip-addresses</member>
-                  <member>proxy-avoidance-and-anonymizers</member>
-                  <member>questionable</member>
-                  <member>real-estate</member>
-                  <member>real-time-detection</member>
-                  <member>recreation-and-hobbies</member>
-                  <member>reference-and-research</member>
-                  <member>religion</member>
-                  <member>search-engines</member>
-                  <member>sex-education</member>
-                  <member>shareware-and-freeware</member>
-                  <member>shopping</member>
-                  <member>social-networking</member>
-                  <member>society</member>
-                  <member>sports</member>
-                  <member>stock-advice-and-tools</member>
-                  <member>streaming-media</member>
-                  <member>swimsuits-and-intimate-apparel</member>
-                  <member>training-and-tools</member>
-                  <member>translation</member>
-                  <member>travel</member>
-                  <member>unknown</member>
-                  <member>weapons</member>
-                  <member>web-advertisements</member>
-                  <member>web-based-email</member>
-                  <member>web-hosting</member>
+                <block loc="shared">
+                  <member loc="shared">grayware</member>
+                  <member loc="shared">hacking</member>
+                  <member loc="shared">malware</member>
+                  <member loc="shared">phishing</member>
+                  <member loc="shared">private-ip-addresses</member>
                 </block>
               </entry>
             </url-filtering>
@@ -1071,10 +875,7 @@
           <management>
             <hostname-type-in-syslog>FQDN</hostname-type-in-syslog>
             <initcfg>
-              <hostname>vmseries-ngfw</hostname>
-              <op-command-modes>mgmt-interface-swap</op-command-modes>
-              <dns-secondary>4.2.2.2</dns-secondary>
-              <dns-primary>169.254.169.254</dns-primary>
+              <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEQTBHbjZtSzVYYTFuVU9JemVPalBzM2h5a2dQNWMrWVZBalNOcTFwZEVaRGZ1VDU4cEpGYUxMUmZUejA3b0JlRjFtb2lhVVVScHJUNytEdGkzak52ZTBSTTY4TVB5MTJiVlVKdTlTUW5xVVljSGg2UzFVLzgxellDcmxMaGZ4VHozR3IyTmRyNkR4K3Y5dHdFc0s5Z2FxbkJwQ3NHelZpUW1pa28ycE0vY3l3anhVNHRJWmp2WnBiRHlDTWNnTElubkxVaVpXQjlDTzJlVWE3RDZQTDBhZXNsNFZLQlNvODdZeEg5Y1VCMkZmMmJnYzlhZzVmYThJSFVkU3hQY1FUL0dHcnZqR3ZCZXdJaG8yRWhwRDhtdmJMYURJbDBuRDVUQ1lIOWRXK3NDMlNteHVLSFI3dUhlWW5BMTFTTmNOakVLc0VmYytrcVc2TVQ2dTNGand3N3AgY3Mta2V5Cg==</public-key>
               <type>
                 <dhcp-client>
                   <send-hostname>yes</send-hostname>
@@ -1083,7 +884,10 @@
                   <accept-dhcp-domain>yes</accept-dhcp-domain>
                 </dhcp-client>
               </type>
-              <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFERUdSWU1oT1ljUHhQSmJzakpsWUpUeDh1WTJCbFkveTUzcXJZN0UwUUFXTmlPM2xtMjlOdmRqSkFHT2dWUzkzaTBWRVBKVCtvRHBxeVhIb1orY1VMdzZJbmF3eThja3JraVUwamhYK3YvWUFYSmd4NmJiWis1eFZ6OTR3cjRiKzlTWDJ3SjVxWFlTeTN3M28vYXU3VlJDaWxCdmt0THRlc3cyVkNKVTZLYnVDVGRYeTd6NjlLYnUvak1wVzZadnlkYW1QS1JZU05HSDJUZXRDcmtTa015YnFNdXVBWEg0K0QzbytzVEdqam0zYituTnE2RlZOakxUYk1LT3dnZ3plT2hYUDNVN0ZwQjE3RVVQSTBQcFVYb3RmVDJoLzBadDc3cEI3MWxIMzRsSlRQMVlDbE55V1phbW01TGFEWVF4MTNTdkp5U0NnMFQvTGhJcVNpVXlML1ogY3Mta2V5Cg==</public-key>
+              <hostname>vmseries-ngfw</hostname>
+              <dns-primary>169.254.169.254</dns-primary>
+              <dns-secondary>4.2.2.2</dns-secondary>
+              <op-command-modes>mgmt-interface-swap</op-command-modes>
             </initcfg>
           </management>
         </setting>
@@ -1157,7 +961,7 @@
             <superuser>yes</superuser>
           </role-based>
         </permissions>
-        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFERUdSWU1oT1ljUHhQSmJzakpsWUpUeDh1WTJCbFkveTUzcXJZN0UwUUFXTmlPM2xtMjlOdmRqSkFHT2dWUzkzaTBWRVBKVCtvRHBxeVhIb1orY1VMdzZJbmF3eThja3JraVUwamhYK3YvWUFYSmd4NmJiWis1eFZ6OTR3cjRiKzlTWDJ3SjVxWFlTeTN3M28vYXU3VlJDaWxCdmt0THRlc3cyVkNKVTZLYnVDVGRYeTd6NjlLYnUvak1wVzZadnlkYW1QS1JZU05HSDJUZXRDcmtTa015YnFNdXVBWEg0K0QzbytzVEdqam0zYituTnE2RlZOakxUYk1LT3dnZ3plT2hYUDNVN0ZwQjE3RVVQSTBQcFVYb3RmVDJoLzBadDc3cEI3MWxIMzRsSlRQMVlDbE55V1phbW01TGFEWVF4MTNTdkp5U0NnMFQvTGhJcVNpVXlML1ogY3Mta2V5Cg==</public-key>
+        <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEQTBHbjZtSzVYYTFuVU9JemVPalBzM2h5a2dQNWMrWVZBalNOcTFwZEVaRGZ1VDU4cEpGYUxMUmZUejA3b0JlRjFtb2lhVVVScHJUNytEdGkzak52ZTBSTTY4TVB5MTJiVlVKdTlTUW5xVVljSGg2UzFVLzgxellDcmxMaGZ4VHozR3IyTmRyNkR4K3Y5dHdFc0s5Z2FxbkJwQ3NHelZpUW1pa28ycE0vY3l3anhVNHRJWmp2WnBiRHlDTWNnTElubkxVaVpXQjlDTzJlVWE3RDZQTDBhZXNsNFZLQlNvODdZeEg5Y1VCMkZmMmJnYzlhZzVmYThJSFVkU3hQY1FUL0dHcnZqR3ZCZXdJaG8yRWhwRDhtdmJMYURJbDBuRDVUQ1lIOWRXK3NDMlNteHVLSFI3dUhlWW5BMTFTTmNOakVLc0VmYytrcVc2TVQ2dTNGand3N3AgY3Mta2V5Cg==</public-key>
       </entry>
     </users>
     <password-complexity>
@@ -1166,3 +970,4 @@
     </password-complexity>
   </mgt-config>
 </config>
+
