@@ -114,12 +114,12 @@ resource "aws_s3_object" "content" {
 #  acl    = "private"
 #}
 
-resource "aws_s3_object_copy" "panup-all-gp" {
-  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
-  key    = "content/panup-all-gp-94-237"
-  source = "aws-utd-bucket-v3/content/panup-all-gp-94-237"
-  acl    = "private"
-}
+#resource "aws_s3_object_copy" "panup-all-gp" {
+#  bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
+#  key    = "content/panup-all-gp-94-237"
+#  source = "aws-utd-bucket-v3/content/panup-all-gp-94-237"
+#  acl    = "private"
+#}
 
 resource "aws_s3_object_copy" "panup-all-wildfire" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
