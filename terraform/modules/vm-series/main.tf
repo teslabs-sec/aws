@@ -123,8 +123,8 @@ resource "aws_s3_object" "content" {
 
 resource "aws_s3_object_copy" "panup-all-wildfire" {
   bucket = aws_s3_bucket.bootstrap_bucket_ngfw.id
-  key    = "content/panupv3-all-wildfire-671311-674601"
-  source = "aws-utd-bucket-v3/content/panupv3-all-wildfire-671311-674601"
+  key    = "content/panupv3-all-wildfire-866893-870775"
+  source = "aws-utd-bucket-v3/content/panupv3-all-wildfire-866893-870775"
   acl    = "private"
 }
 
